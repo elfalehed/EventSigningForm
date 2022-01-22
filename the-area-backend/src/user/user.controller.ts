@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 
 @Controller('user')
@@ -7,9 +7,13 @@ export class UserController {
         private readonly userserv :UserService
     ){}
 
-    @Post('/registreUser')
+    @Post('adduser')
     async registreUser( @Body() user :any){
         const users = this.userserv.Adduser(user);
         return users
+    }
+    @Get('allUsers')
+    async getAllUser(){
+        return await this.userserv.allUsers();
     }
 }

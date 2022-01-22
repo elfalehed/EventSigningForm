@@ -11,13 +11,15 @@ import {MatAutocompleteModule,} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AmbassadeursComponent } from './ambassadeurs/ambassadeurs.component';
 import { AmbassadeurDashComponent } from './ambassadeur-dash/ambassadeur-dash.component';
+import { DashbordAdminComponent } from './dashbord-admin/dashbord-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AmbassadeursComponent,
-    AmbassadeurDashComponent
+    AmbassadeurDashComponent,
+    DashbordAdminComponent
   ],
   imports: [
     BrowserModule,
