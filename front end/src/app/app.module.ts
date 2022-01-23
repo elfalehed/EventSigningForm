@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { DashbordItComponent } from './dashbord-it/dashbord-it.component';
 import { AddAmbassadeurComponent } from './dashbord-it/add-ambassadeur/add-ambassadeur.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { AddAmbassadeurComponent } from './dashbord-it/add-ambassadeur/add-ambas
     DashbordAdminComponent,
     HeaderComponent,
     DashbordItComponent,
-    AddAmbassadeurComponent
+    AddAmbassadeurComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
