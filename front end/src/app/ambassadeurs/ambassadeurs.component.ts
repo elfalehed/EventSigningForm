@@ -12,20 +12,20 @@ export class AmbassadeursComponent implements OnInit {
 
   constructor() { }
 
-  myControl = new FormControl();
+  selected:boolean=false
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions!: Observable<string[]>;
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map((value: string) => this._filter(value)),
-    );
+   
+  
+  }
+onchange(e:any){
+  console.log(e.target.value)
+  if(e.target.value=="institut supérieur d'informatique de medenine"){
+    this.selected=true;
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+}
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
-  }
 }

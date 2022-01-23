@@ -13,13 +13,21 @@ import { AmbassadeursComponent } from './ambassadeurs/ambassadeurs.component';
 import { AmbassadeurDashComponent } from './ambassadeur-dash/ambassadeur-dash.component';
 import { DashbordAdminComponent } from './dashbord-admin/dashbord-admin.component';
 
+import {MatTabsModule} from '@angular/material/tabs';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { DashbordItComponent } from './dashbord-it/dashbord-it.component';
+import { AddAmbassadeurComponent } from './dashbord-it/add-ambassadeur/add-ambassadeur.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AmbassadeursComponent,
     AmbassadeurDashComponent,
-    DashbordAdminComponent
+    DashbordAdminComponent,
+    HeaderComponent,
+    DashbordItComponent,
+    AddAmbassadeurComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +36,9 @@ import { DashbordAdminComponent } from './dashbord-admin/dashbord-admin.componen
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTabsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

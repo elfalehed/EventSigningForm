@@ -1,99 +1,4 @@
-<!-- Header
-		============================================= -->
-        <header
-        id="header"
-        class="full-header transparent-header header-size-custom"
-        data-sticky-shrink="false"
-        data-sticky-offset="full"
-      >
-        <div id="header-wrap">
-          <div class="container">
-            <div class="header-row">
-              <!-- Logo
-                              ============================================= -->
-              <div id="logo">
-                <a
-                  href="index.html"
-                  class="standard-logo"
-                  data-dark-logo="../assets/area01-logo.png"
-                  ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
-                /></a>
-                <a
-                  href="index.html"
-                  class="retina-logo"
-                  data-dark-logo="one-page/images/canvasone-dark@2x.png"
-                  ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
-                /></a>
-              </div>
-              <!-- #logo end -->
-      <!-- 
-              <div class="header-misc">
-                <div class="side-panel-trigger header-misc-icon">
-                  <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-                </div>
-              </div> -->
-      
-              <div id="primary-menu-trigger">
-                <svg class="svg-trigger" viewBox="0 0 100 100">
-                  <path
-                    d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
-                  ></path>
-                  <path d="m 30,50 h 40"></path>
-                  <path
-                    d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
-                  ></path>
-                </svg>
-              </div>
-      
-              <!-- Primary Navigation
-                              ============================================= -->
-              <nav class="primary-menu">
-                <ul
-                  class="one-page-menu menu-container"
-                  data-easing="easeInOutExpo"
-                  data-speed="1250"
-                  data-offset="65"
-                >
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#wrapper"
-                      ><div>Home</div></a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-about"
-                      ><div>ambassadeurs</div></a
-                    >
-                  </li>
-                  <!-- <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-works"
-                      ><div>Works</div></a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-services"
-                      ><div>Services</div></a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-blog"
-                      ><div>Blog</div></a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-contact"
-                      ><div>Contact</div></a
-                    >
-                  </li> -->
-                </ul>
-              </nav>
-              <!-- #primary-menu end -->
-            </div>
-          </div>
-        </div>
-        <div class="header-wrap-clone"></div>
-      </header>
-      <!-- #header end -->
-      
+
       <!-- Slider
               ============================================= -->
       <section
@@ -123,64 +28,11 @@
                   </div>
                   <div class="widget-subscribe-form-result"></div>
       
-                  <!-- <form
-                    id="slider-subscribe-form"
-                    action="include/subscribe.php"
-                    method="post"
-                    class="mb-0"
-                  >
-                    <div class="input-group">
-                      <input
-                        type="email"
-                        id="widget-subscribe-form-email"
-                        name="widget-subscribe-form-email"
-                        class="form-control input-lg not-dark required email"
-                        placeholder="Enter your Email Address.."
-                      />
-                    </div>
-      
-                    <div class="input-group col-6">
-                      <input
-                        type="text"
-                        id="widget-subscribe-form-email"
-                        name="widget-subscribe-form-firstname"
-                        class="form-control input-lg not-dark required email"
-                        placeholder="Enter your First name.."
-                      />
-                    </div>
-      
-                    <div class="input-group">
-                      <input
-                        type="text"
-                        id="widget-subscribe-form-email"
-                        name="widget-subscribe-form-lastname"
-                        class="form-control input-lg not-dark required email"
-                        placeholder="Enter your Last name.."
-                      />
-                    </div>
-      
-                    <div class="input-group">
-                      <input
-                        type="text"
-                        id="widget-subscribe-form-email"
-                        name="widget-subscribe-form-email"
-                        class="form-control input-lg not-dark required email"
-                        placeholder="Enter your ID.."
-                      />
-                    </div>
-      
-                    <div class="input-group">
-                      <input
-                        type="text"
-                        id="widget-subscribe-form-email"
-                        name="widget-subscribe-form-email"
-                        class="form-control input-lg not-dark required email"
-                        placeholder="Enter your Email Address.."
-                      />
-                    </div>
-                  </form> -->
+                
       
                   <form
+                  [formGroup]="participantform"
+                   (ngSubmit)="onSubmit()"
                     class="row"
                     id="event-registration"
                     action="include/form.php"
@@ -195,6 +47,7 @@
                     <div class="col-6 form-group">
                       <label>First Name:</label>
                       <input
+                      formControlName="FirstName"
                         type="text"
                         name="event-registration-first-name"
                         id="event-registration-first-name"
@@ -206,6 +59,7 @@
                     <div class="col-6 form-group">
                       <label>Last Name:</label>
                       <input
+                      formControlName="LastName"
                         type="text"
                         name="event-registration-last-name"
                         id="event-registration-last-name"
@@ -217,6 +71,7 @@
                     <div class="col-12 form-group">
                       <label>Email:</label>
                       <input
+                      formControlName="email"
                         type="email"
                         name="event-registration-email"
                         id="event-registration-email"
@@ -228,6 +83,7 @@
                     <div class="col-12 form-group">
                       <label>ID:</label>
                       <input
+                      formControlName="cin"
                         type="TEXT"
                         name="event-registration-id"
                         id="event-registration-id"
@@ -240,29 +96,31 @@
                       <label>Gender:</label><br />
                       <div class="form-check form-check-inline">
                         <input
+                        formControlName="gender"
                           class="form-check-input required"
                           type="radio"
-                          name="event-registration-gender"
+                          name="gender"
                           id="event-registration-gender-male"
                           value="Male"
                         />
                         <label
                           class="form-check-label nott"
-                          for="event-registration-gender-male"
+                          for="gender"
                           >Male</label
                         >
                       </div>
                       <div class="form-check form-check-inline">
                         <input
+                        formControlName="gender"
                           class="form-check-input"
                           type="radio"
-                          name="event-registration-gender"
+                          name="gender"
                           id="event-registration-gender-female"
                           value="Female"
                         />
                         <label
                           class="form-check-label nott"
-                          for="event-registration-gender-female"
+                          for="gender"
                           >Female</label
                         >
                       </div>
@@ -270,6 +128,7 @@
                     <div class="col-6 form-group">
                       <label>DATE OF BIRTH:</label>
                       <input
+                      formControlName="dateOfBirth"
                         type="date"
                         name="event-registration-id"
                         id="event-registration-id"
@@ -280,6 +139,7 @@
                     <div class="col-6 form-group">
                       <label>Phone:</label><br />
                       <input
+                      formControlName="phone"
                         type="text"
                         name="freelance-quote-phone"
                         id="freelance-quote-phone"
@@ -291,6 +151,7 @@
                     <div class="col-6 form-grou">
                       <label>governorate</label>
                       <select
+                      formControlName="governorate"
                         class="form-select required"
                         name="event-registration-passes"
                         id="event-registration-passes"
@@ -328,6 +189,7 @@
                       <div class="form-group">
                         <label>university</label>
                         <input
+                        formControlName="university"
                         type="text"
                         name="event-registration-last-name"
                         id="event-registration-last-name"
@@ -337,45 +199,23 @@
                         list="ice-cream-flavors"
                       />
                         <datalist id="ice-cream-flavors">
-                          <option value="Chocolate">
-                          <option value="Coconut">
-                          <option value="Mint">
-                          <option value="Strawberry">
-                          <option value="Vanilla">
+                          <option value="institut supérieur d'informatique de medenine">
+                            <option value="institut supérieur d'informatique de Mahdia">
+                            <option value="institut supérieur d'informatique de tunis ">
+                            <option value="institut supérieur d'informatique gabes">
                       </datalist>
                       </div>
                     </div>
-                    <div class="col-12">
-                      <div class="form-group">
-                        <label>How did you hear about the Event?</label>
-                        <select
-                          class="form-select required"
-                          name="event-registration-know-us"
-                          id="event-registration-know-us"
-                        >
-                          <option value="">-- Select One --</option>
-                          <option value="Google">Google</option>
-                          <option value="Social Media">Social Media</option>
-                          <option value="Friends">Friends</option>
-                          <option value="Advertisement">Advertisement</option>
-                          <option value="Others">Others</option>
-                        </select>
-                      </div>
-                    </div>
+           
       
-                    <div class="col-12 d-none">
-                      <input
-                        type="text"
-                        id="event-registration-botcheck"
-                        name="event-registration-botcheck"
-                        value=""
-                      />
-                    </div>
+    
                     <div class="col-12">
                       <button
                         type="submit"
                         name="event-registration-submit"
                         class="btn btn-secondary"
+                        [disabled]="!participantform.valid"
+                        
                       >
                         Register
                       </button>

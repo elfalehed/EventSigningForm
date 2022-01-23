@@ -1,7 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { AmbassadeurDashComponent } from './ambassadeur-dash/ambassadeur-dash.component';
+import { AmbassadeursComponent } from './ambassadeurs/ambassadeurs.component';
+import { DashbordAdminComponent } from './dashbord-admin/dashbord-admin.component';
+import { HomeComponent } from './home/home.component';
+import { DashbordItComponent } from './dashbord-it/dashbord-it.component';
+import { AddAmbassadeurComponent } from './dashbord-it/add-ambassadeur/add-ambassadeur.component';
+const routes: Routes = [
+  // { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `first-component`
+  { path: '', component: HomeComponent},
+  { path: 'ambassadeurs', component: AmbassadeursComponent },
+  { path: 'ambassadeurs-dash', component: AmbassadeurDashComponent },
+  { path: 'finance-dash', component: DashbordAdminComponent },
+  { path: 'Admin-dash', component: DashbordItComponent },
+  { path: 'amb', outlet:"dashbord",component: AddAmbassadeurComponent},
+  // { path: '**', component: PageNotFoundComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

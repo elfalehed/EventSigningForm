@@ -1,0 +1,144 @@
+{
+  "participant": [
+    {
+      "cin": "1340766",
+      "FirstName": "fahmi",
+      "LastName": "zaghden",
+      "mail": "fahmidouiri@gmail.com",
+      "Gender": "Male",
+      "DateOfBirth": null,
+      "Phone": "52002119",
+      "governorate": null,
+      "university": "institut supérieur d'informatique de medenine",
+      "pay": true,
+      "id": 4
+    },
+    {
+      "cin": "1340766",
+      "FirstName": "fahmi",
+      "LastName": "zaghden",
+      "mail": "fahmidouiri@gmail.com",
+      "Gender": "Male",
+      "DateOfBirth": "2022-01-09",
+      "Phone": "52002119",
+      "governorate": "Tataouine",
+      "university": "institut supérieur d'informatique de medenine",
+      "pay": false,
+      "id": 5
+    },
+    {
+      "cin": "1340760",
+      "FirstName": "fahmi",
+      "LastName": "zaghden",
+      "mail": "fahmidouiri@gmail.com",
+      "Gender": "Male",
+      "DateOfBirth": "2022-01-09",
+      "Phone": "52002119",
+      "governorate": "Tataouine",
+      "university": "institut supérieur d'informatique de medenine",
+      "pay": false,
+      "id": 6
+    },
+    {
+      "cin": "",
+      "FirstName": "fahmi",
+      "LastName": "zaghden",
+      "mail": "fahmidouiri@gmail.com",
+      "Gender": "",
+      "DateOfBirth": "",
+      "Phone": "52002119",
+      "governorate": "",
+      "university": "institut supérieur d'informatique de medenine",
+      "pay": false,
+      "id": 8
+    },
+    {
+      "cin": "",
+      "FirstName": "",
+      "LastName": "",
+      "mail": "",
+      "Gender": "",
+      "DateOfBirth": "",
+      "Phone": "",
+      "governorate": "",
+      "university": "institut supérieur d'informatique de medenine",
+      "pay": false,
+      "id": 10
+    },
+    {
+      "cin": "1340766",
+      "FirstName": "fahmi",
+      "LastName": "zaghden",
+      "mail": "fahmidouiri@gmail.com",
+      "Gender": "Male",
+      "DateOfBirth": "2022-02-06",
+      "Phone": "52002119",
+      "governorate": "Tataouine",
+      "university": "institut supérieur d'informatique de medenine",
+      "pay": true,
+      "id": 11
+    },
+    {
+      "cin": "1340766",
+      "FirstName": "fahmi",
+      "LastName": "zaghden",
+      "mail": "fahmidouiri@gmail.com",
+      "Gender": "Male",
+      "DateOfBirth": "2022-01-20",
+      "Phone": "52002119",
+      "governorate": "Tozeur",
+      "university": "institut supérieur d'informatique de medenine",
+      "pay": true,
+      "id": 12
+    }
+  ],
+  "ambassadeur": [
+    {
+      "cin": "1340766",
+      "FirstName": "fahmi",
+      "LastName": "zaghden",
+      "mail": "fahmidouiri@gmail.com",
+      "psw": "123456",
+      "Gender": "Male",
+      "DateOfBirth": "2022-01-20",
+      "Phone": "52002119",
+      "governorate": "Tozeur",
+      "university": "institut supérieur d'informatique de medenine",
+      "pay": true,
+      "id": 12
+    },
+    {
+      "cin": "1340766",
+      "FirstName": "fahmi",
+      "LastName": "zaghden",
+      "mail": "fahmidouiri@gmail.com",
+      "psw": "abc",
+      "Gender": "Male",
+      "DateOfBirth": "2021-12-27",
+      "Phone": "52002119",
+      "governorate": "Siliana",
+      "university": "institut supérieur d'informatique gabes",
+      "id": 13
+    }
+  ],
+  "financier": [
+    {
+      "id": 13,
+      "cin": "1340766",
+      "FirstName": "fahmi",
+      "LastName": "zaghden",
+      "mail": "fahmidouiri@gmail.com",
+      "psw": "abc"
+    },
+    {
+      "cin": "1340766",
+      "FirstName": "fahmi",
+      "LastName": "zaghde",
+      "mail": "fahmidouiri@gmail.com",
+      "psw": "123",
+      "Gender": "Male",
+      "Phone": "52002119",
+      "id": 14
+    }
+  ]
+}
