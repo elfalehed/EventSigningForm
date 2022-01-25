@@ -11,7 +11,7 @@ import {AmbassadeurService} from "../../service/ambassadeur.service"
 })
 export class AddAmbassadeurComponent implements OnInit {
 
-  AmbassadeurList : Ambassadeur[] =[]
+  AmbassadeurList : any[] =[]
   ambassadeurform!:FormGroup;
   options: string[] = ['One', 'Two', 'Three'];
 
@@ -22,7 +22,7 @@ export class AddAmbassadeurComponent implements OnInit {
     this.ambassadeurform =this.formBuilder.group({
       FirstName : ['',Validators.required],
       LastName : ['',Validators.required],
-      email : ['',Validators.email],
+      email : ['',Validators.email], 
       psw:['',Validators.required],
       cfpsw:['',Validators.required],
       cin : ['',Validators.required],

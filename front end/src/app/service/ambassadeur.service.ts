@@ -18,17 +18,19 @@ const httpOptions = {
 })
 
 export class AmbassadeurService {
-  private apiUrl = "http://localhost:3000/ambassadeur"
+  
   constructor(private http: HttpClient) { }
 
   getAmbassadeurs():Observable<Ambassadeur[]> {
-    console.log(this.http.get<Ambassadeur[]>(this.apiUrl))
-    return this.http.get<Ambassadeur[]>(this.apiUrl);
+    const apiUrl = "http://localhost:3000/ambassadeur/allamb"
+    console.log(this.http.get<Ambassadeur[]>(apiUrl))
+    return this.http.get<Ambassadeur[]>(apiUrl);
   }
 
   addAmbassadeur(ambassadeur:Ambassadeur):Observable<Ambassadeur>{
+     const apiUrl = "http://localhost:3000/ambassadeur/addamb"
     console.log(ambassadeur)
-    return this.http.post<Ambassadeur>(this.apiUrl,ambassadeur)
+    return this.http.post<Ambassadeur>(apiUrl,ambassadeur)
   }
 
 }

@@ -14,7 +14,13 @@ export class UserService {
       firstName: user.firstname,
       lastName: user.lastname,
       email: user.email,
-
+      cin:user.cin,
+      sexe:user.sexe,
+      birthday:user.birthday,
+      tel:user.tel,
+      gouvernerat:user.gouvernerat,
+      universite:user.universite,
+      paye:user.paye,
     });
 
     return newUser.save()

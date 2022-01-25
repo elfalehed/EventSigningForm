@@ -7,6 +7,12 @@ export const AbassadeurSchema = new Mongoose.Schema({
     email: { type: String, required:true},
     password: { type: String},
     phone: { type: String},
+    sexe:{ type: String },
+    gouvernerat:{ type: String },
+    universite:{ type: String },
+    paye:{ type: Boolean },
+    cin:{type: Number},
+    birthday:{type:Date},
     role:{type:String,default:UserRoleEnum.Ambassadeur}
   });
 
@@ -17,6 +23,10 @@ export interface Ambassadeur extends Mongoose.Document {
   email: string;
   password:string;
   phone:number;
+  sexe:string;
+  birthday:Date;
+  gouvernerat:string;
+  universite:string;
   role : UserRoleEnum;
   
 }

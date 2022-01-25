@@ -19,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
 import { DashbordItComponent } from './dashbord-it/dashbord-it.component';
 import { AddAmbassadeurComponent } from './dashbord-it/add-ambassadeur/add-ambassadeur.component';
 import { LoginComponent } from './login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatFormFieldModule,

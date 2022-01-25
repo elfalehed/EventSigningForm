@@ -1,4 +1,5 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Ambassadeur } from './ambassadeur.model';
 import { AmbassadeurService } from './ambassadeur.service';
 
 @Controller('ambassadeur')
@@ -14,6 +15,10 @@ async registreAmbassadeur( @Body() Ambasadeur :any){
 }
 @Get('allamb')
 async getAllUser(){
-    return await this.ambservice.allambassadeur;
+    return await this.ambservice.allambassadeur();
 }
+@Get('/:id')
+    async getUser( @Param() params): Promise<Ambassadeur> {
+        return await this.ambservice.getambassabyid(params.id);
+    }
 }
