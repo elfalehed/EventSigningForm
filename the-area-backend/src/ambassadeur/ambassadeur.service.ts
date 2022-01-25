@@ -23,7 +23,7 @@ async Addambassadeur(ambassadeur: any) {
       birthday:ambassadeur.birthday,
       gouvernerat:ambassadeur.gouvernerat,
       universite:ambassadeur.universite,
-    
+      role:ambassadeur.role
     });
 
     return newambassadeur.save()
@@ -43,6 +43,7 @@ async Addambassadeur(ambassadeur: any) {
       birthday:ambassadeu.birthday,
       gouvernerat:ambassadeu.gouvernerat,
       universite:ambassadeu.universite,
+      
     }
    }
 }

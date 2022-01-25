@@ -1,279 +1,139 @@
-<div class="stretched side-header" data-animation-in="bounce">
+<div class="stretched side-header" data-animation-in="bounce" style="    min-height: 100vh;">
 
 	<!-- Document Wrapper
 	============================================= -->
-	<div id="wrapper" class="clearfix">
+	
 
-		<div class="modal-on-load" data-target="#myModal1"></div>
+		<mat-tab-group>
+			<mat-tab label="Ambassadeurs">
+				<app-add-ambassadeur></app-add-ambassadeur>
+			</mat-tab>
+			<mat-tab label="Financier">
+				<section id="content">
 
+					<div class="table-responsive">
+						<table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Gender</th>
+									<th>Phone</th>
+									<th>Email</th>
+								</tr>
+							</thead>
+							
+							<tbody>
 
-		<!-- Header
-		============================================= -->
-		<header id="header">
-			<div id="header-wrap">
-				<div class="container">
-					<div class="header-row justify-content-between">
-
-			
-
-						<div class="header-misc order-3 order-lg-last">
-							<a href="#" class="button button-rounded button-reveal button-large button-yellow button-light"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
-						</div>
-
-						<!-- Primary Navigation
-						============================================= -->
-						<nav class="primary-menu order-last order-lg-2">
-
-							<ul class="menu-container one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="0">
-								<li class="menu-item"><a class="menu-link" ><div>Home</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="#about" data-href="#about"><div>About</div></a></li>
-								<li class="menu-item"><a class="menu-link" [routerLink]="[{ outlets: { primary: ['Admin-dash'],dashbord: ['amb'] } }]"><div>Price</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="Admin-dash/#services" data-href="#services"><div>Services</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="#promotions" data-href="#promotions"><div>Promotions</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="#footer" data-href="#footer"><div>Contact</div></a></li>
-							</ul>
-
-						</nav><!-- #primary-menu end -->
-
-					</div>
-				</div>
-			</div>
-			<div class="header-wrap-clone"></div>
-		</header><!-- #header end -->
-
-		
-		<!-- Content
-		============================================= -->
-		<section id="content">
-		
-			<mat-tab-group>
-				<mat-tab label="Ambassadeurs">
-					<app-add-ambassadeur></app-add-ambassadeur>
-
-				</mat-tab>
-				<mat-tab label="Financier"> 		
-					<section id="content">
+								<tr *ngFor="let participant of FinancierList">
+									<td>{{participant.FirstName+" "+participant.LastName}} </td>
+									<td>{{participant.Gender}}</td>
+									<td>{{participant.Phone}}</td>
+									<td>{{participant.mail}}</td>
 						
 
-<form
-[formGroup]="financierform"
- (ngSubmit)="onSubmit()"
-  class="row"
-  id="event-registration"
- 
-  method="post"
-  enctype="multipart/form-data"
->
-  <div class="form-process">
-	<div class="css3-spinner">
-	  <div class="css3-spinner-scaler"></div>
-	</div>
-  </div>
-  <div class="col-6 form-group">
-	<label>First Name:</label>
-	<input
-	formControlName="FirstName"
-	  type="text"
-	  name="event-registration-first-name"
-	  id="event-registration-first-name"
-	  class="form-control required"
-	  value=""
-	  placeholder="Enter your First Name"
-	/>
-  </div>
-  <div class="col-6 form-group">
-	<label>Last Name:</label>
-	<input
-	formControlName="LastName"
-	  type="text"
-	  name="event-registration-last-name"
-	  id="event-registration-last-name"
-	  class="form-control required"
-	  value=""
-	  placeholder="Enter your Last Name"
-	/>
-  </div>
-  <div class="col-12 form-group">
-	<label>Email:</label>
-	<input
-	formControlName="email"
-	  type="email"
-	  name="event-registration-email"
-	  id="event-registration-email"
-	  class="form-control required"
-	  value=""
-	  placeholder="Enter your Email Address"
-	/>
-  </div>
-  <div class="col-6 form-group">
-	<label>password:</label><br />
-	<input
-	formControlName="psw"
-	(change)="checkPasswords()"
-	  type="password"
-	  name="freelance-quote-phone"
-	  id="freelance-quote-phone"
-	  class="form-control required"
-	  value=""
-	  placeholder="password"
-	/>
-  </div>
+								</tr>
 
-  <div class="col-6 form-group">
-	<label>Confirm password:</label><br />
-	<input
-	formControlName="cfpsw"
-	(change)="checkPasswords()"
-	  type="password"
-	  name="freelance-quote-phone"
-	  id="freelance-quote-phone"
-	  class="form-control required"
-	  value=""
-	  placeholder="password"
-	/>
-	<div style="color:red" *ngIf="checkPasswords()"> check you psw</div>
-  </div>
+							</tbody>
+						</table>
+					</div>
+					<form [formGroup]="financierform" (ngSubmit)="onSubmit()" class="row" id="event-registration"
+						method="post" enctype="multipart/form-data">
+						<div class="form-process">
+							<div class="css3-spinner">
+								<div class="css3-spinner-scaler"></div>
+							</div>
+						</div>
+						<div class="col-6 form-group">
+							<label>First Name:</label>
+							<input formControlName="FirstName" type="text" name="event-registration-first-name"
+								id="event-registration-first-name" class="form-control required" value=""
+								placeholder="Enter your First Name" />
+						</div>
+						<div class="col-6 form-group">
+							<label>Last Name:</label>
+							<input formControlName="LastName" type="text" name="event-registration-last-name"
+								id="event-registration-last-name" class="form-control required" value=""
+								placeholder="Enter your Last Name" />
+						</div>
+						<div class="col-12 form-group">
+							<label>Email:</label>
+							<input formControlName="email" type="email" name="event-registration-email"
+								id="event-registration-email" class="form-control required" value=""
+								placeholder="Enter your Email Address" />
+						</div>
+						<div class="col-6 form-group">
+							<label>password:</label><br />
+							<input formControlName="psw" (change)="checkPasswords()" type="password"
+								name="freelance-quote-phone" id="freelance-quote-phone" class="form-control required"
+								value="" placeholder="password" />
+						</div>
 
-  <div class="col-12 form-group">
-	<label>ID:</label>
-	<input
-	formControlName="cin"
-	  type="TEXT"
-	  name="event-registration-id"
-	  id="event-registration-id"
-	  class="form-control required"
-	  value=""
-	  placeholder="Enter your ID"
-	/>
-  </div>
-  <div class="col-6 form-group">
-	<label>Gender:</label><br />
-	<div class="form-check form-check-inline">
-	  <input
-	  formControlName="gender"
-		class="form-check-input required"
-		type="radio"
-		name="gender"
-		id="event-registration-gender-male"
-		value="Male"
-	  />
-	  <label
-		class="form-check-label nott"
-		for="gender"
-		>Male</label
-	  >
-	</div>
-	<div class="form-check form-check-inline">
-	  <input
-	  formControlName="gender"
-		class="form-check-input"
-		type="radio"
-		name="gender"
-		id="event-registration-gender-female"
-		value="Female"
-	  />
-	  <label
-		class="form-check-label nott"
-		for="gender"
-		>Female</label
-	  >
-	</div>
-  </div>
-  <div class="col-6 form-group">
-	<label>DATE OF BIRTH:</label>
-	<input
-	formControlName="dateOfBirth"
-	  type="date"
-	  name="event-registration-id"
-	  id="event-registration-id"
-	  class="form-control required"
-	  value=""
-	/>
-  </div>
-  <div class="col-6 form-group">
-	<label>Phone:</label><br />
-	<input
-	formControlName="phone"
-	  type="text"
-	  name="freelance-quote-phone"
-	  id="freelance-quote-phone"
-	  class="form-control required"
-	  value=""
-	  placeholder="00-000-000"
-	/>
-  </div>
- 
+						<div class="col-6 form-group">
+							<label>Confirm password:</label><br />
+							<input formControlName="cfpsw" (change)="checkPasswords()" type="password"
+								name="freelance-quote-phone" id="freelance-quote-phone" class="form-control required"
+								value="" placeholder="password" />
+							<div style="color:red" *ngIf="checkPasswords()"> check you psw</div>
+						</div>
 
-  
+						<div class="col-12 form-group">
+							<label>ID:</label>
+							<input formControlName="cin" type="TEXT" name="event-registration-id"
+								id="event-registration-id" class="form-control required" value=""
+								placeholder="Enter your ID" />
+						</div>
+						<div class="col-6 form-group">
+							<label>Gender:</label><br />
+							<div class="form-check form-check-inline">
+								<input formControlName="gender" class="form-check-input required" type="radio"
+									name="gender" id="event-registration-gender-male" value="Male" />
+								<label class="form-check-label nott" for="gender">Male</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input formControlName="gender" class="form-check-input" type="radio" name="gender"
+									id="event-registration-gender-female" value="Female" />
+								<label class="form-check-label nott" for="gender">Female</label>
+							</div>
+						</div>
+						<div class="col-6 form-group">
+							<label>DATE OF BIRTH:</label>
+							<input formControlName="dateOfBirth" type="date" name="event-registration-id"
+								id="event-registration-id" class="form-control required" value="" />
+						</div>
+						<div class="col-6 form-group">
+							<label>Phone:</label><br />
+							<input formControlName="phone" type="text" name="freelance-quote-phone"
+								id="freelance-quote-phone" class="form-control required" value=""
+								placeholder="00-000-000" />
+						</div>
 
 
 
-  <div class="col-12">
-	<button
-	  type="submit"
-	  name="event-registration-submit"
-	  class="btn btn-secondary"
-	  [disabled]="(!financierform.valid||checkPasswords())"
-	  
-	>
-	  Register
-	</button>
-  </div>
-
-  <input type="hidden" name="prefix" value="event-registration-" />
-</form>
 
 
 
-<div class="table-responsive">
-	<table id="datatable1" class="table table-striped table-bordered" cellspacing="0" width="100%">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Gender</th>
-				<th>Phone</th>
-				<th>Email</th>
-			</tr>
-		</thead>
-		<tfoot>
-			<tr>
-				<th>Name</th>
-				<th>Gender</th>
-				<th>Phone</th>
-				<th>Email</th>
-			</tr>
-		</tfoot>
-		<tbody>
-			
-			<tr *ngFor="let participant of FinancierList" >
-				<td>{{participant.FirstName+" "+participant.LastName}} </td>
-				<td>{{participant.Gender}}</td>
-				<td>{{participant.Phone}}</td>
-				<td>{{participant.mail}}</td>
-				<!-- <td>
-					<form>
-						<input (change)="onChange($event,participant)" type="checkbox" [checked]="participant.pay" >
+						<div class="col-12">
+							<button type="submit" name="event-registration-submit" class="btn btn-secondary"
+								[disabled]="(!financierform.valid||checkPasswords())">
+								Register
+							</button>
+						</div>
+
+						<input type="hidden" name="prefix" value="event-registration-" />
 					</form>
-					 </td> -->
-				
-			</tr>
-	
-		</tbody>
-	</table>
-</div>
-
 
 				</section><!-- #content end -->
-		 </mat-tab>
-				
-			  </mat-tab-group>
-			<!-- <router-outlet name="dashbord"></router-outlet> -->
-			
-		</section><!-- #content end -->
+			</mat-tab>
+			<mat-tab label="Statistic">
+				<app-statfinance></app-statfinance>
+			</mat-tab>
 
-		
+		</mat-tab-group>
 
-	</div><!-- #wrapper end -->
+
+
+
+
 
 	<!-- Go To Top
 	============================================= -->

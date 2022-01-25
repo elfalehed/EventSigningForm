@@ -1,0 +1,113 @@
+<div class="container-fluid" style="min-height: 100vh;">
+
+    <div class="row">
+        <div class="col-md-6 col-xl-3 mb-4">
+            <div class="card shadow border-start-primary py-2">
+                <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col me-2">
+                            <div class="text-uppercase text-primary fw-bold text-xs mb-1">
+                                <span>Ambassadeur</span></div>
+                            <div class="text-dark fw-bold h5 mb-0"><span>5</span></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3 mb-4">
+            <div class="card shadow border-start-success py-2">
+                <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col me-2">
+                            <div class="text-uppercase text-success fw-bold text-xs mb-1">
+                                <span>Participant</span></div>
+                            <div class="text-dark fw-bold h5 mb-0"><span>200</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3 mb-4">
+            <div class="card shadow border-start-info py-2">
+                <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col me-2">
+                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>Participant
+                                    Paye</span></div>
+                            <div class="row g-0 align-items-center">
+                                <div class="col-auto">
+                                    <div class="text-dark fw-bold h5 mb-0 me-3"><span>50</span></div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar bg-info" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100" style="width: 50%;"><span
+                                                class="visually-hidden">25%</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3 mb-4">
+            <div class="card shadow border-start-info py-2">
+                <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col me-2">
+                            <div class="text-uppercase text-info fw-bold text-xs mb-1"><span>GOVERNORATE</span>
+                            </div>
+                            <select class="form-select form-select-sm" [(ngModel)]="myDropDown"  (ngModelChange)="onChangeofOptions($event)" aria-label=".form-select-sm example">
+                                <option >touts les Governorates</option>
+                                <option value="Ariana">Ariana</option>
+                                <option value="Béja">Béja</option>
+                                <option value="Ben Arous">Ben Arous</option>
+                                <option value="Bizerte">Bizerte</option>
+                                <option value="Gabès">Gabès</option>
+                                <option value="Gafsa">Gafsa</option>
+                                <option value="Jendouba">Jendouba</option>
+                                <option value="Kairouan">Kairouan</option>
+                                <option value="Kasserine">Kasserine</option> 
+                                <option value="Kébili">Kébili</option>
+                                <option value="Kef">Kef</option>
+                                <option value="Mahdia">Mahdia</option>
+                                <option value="Manouba">Manouba</option>
+                                <option value="Médenine">Médenine</option>
+                                <option value="Monastir">Monastir</option>
+                                <option value="Nabeul">Nabeul</option>
+                                <option value="Sfax">Sfax</option>
+                                <option value="Sidi Bouzid">Sidi Bouzid</option>
+                                <option value="Siliana">Siliana</option>
+                                <option value="Sousse">Sousse</option>
+                                <option value="Tataouine">Tataouine</option>
+                                <option value="Tozeur">Tozeur</option>
+                                <option value="">Tunis</option>
+                                <option value="Zaghouan">Zaghouan</option>
+                              </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table class="table caption-top">
+        
+        <thead>
+          <tr>
+            <th >Faculte</th>
+            <th >Nomber de Participant</th>
+            <th >Nomber de Participant Paye</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr *ngFor="let part of particepant">
+            <td>{{part.firstName}}</td>
+            <td>{{part.lastName}}</td>
+            <td>{{part.gouvernerat}}</td>
+          </tr> -->
+        </tbody>
+      </table>
+</div>

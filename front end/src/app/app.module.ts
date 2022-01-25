@@ -19,6 +19,8 @@ import { HeaderComponent } from './header/header.component';
 import { DashbordItComponent } from './dashbord-it/dashbord-it.component';
 import { AddAmbassadeurComponent } from './dashbord-it/add-ambassadeur/add-ambassadeur.component';
 import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
+import { StatfinanceComponent } from './dashbord-admin/statfinance/statfinance.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { LoginComponent } from './login/login.component';
     HeaderComponent,
     DashbordItComponent,
     AddAmbassadeurComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent,
+    StatfinanceComponent
   ],
   imports: [
     BrowserModule,

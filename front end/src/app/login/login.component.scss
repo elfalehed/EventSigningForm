@@ -1,6 +1,79 @@
-.login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
+// .login{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 90vh;
+// }
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+*{
+  padding: 0; margin: 0;
+  box-sizing: border-box;
+  font-family: 'Acme', sans-serif;
+  user-select: none;
+}
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(320deg, #c7d5d6, #9bc3c2, #f7ada6);
+}
+.box{
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(0,0,0, 0.3);
+  box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+h1{
+  font-size: 45px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+img{
+  width: 30px; height: 30px;
+}
+.container{
+  width: 250px;
+  background-color: transparent;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 1000px;
+  padding: 15px;
+}
+input[type="email"], input[type="password"]{
+  width: 210px; height: 40px;
+  background-color: transparent;
+  outline: none; border: none;
+}
+input[type="email"]::placeholder, input[type="password"]::placeholder{
+  color: black;
+  font-size: 15px;
+}
+.remember{
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+a{
+  text-decoration: none;
+  color: #fd9101;
+}
+input[type="submit"]{
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+  border: none;
+  width: 250px;
+  height: 40px;
+  font-size: 15px;
+  cursor: pointer;
+  border: 2px solid black;
 }
