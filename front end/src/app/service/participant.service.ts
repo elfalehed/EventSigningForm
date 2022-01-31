@@ -16,12 +16,13 @@ const httpOptions = {
 })
 export class ParticipantService {
 
-private apiUrl = "http://localhost:3000/participant"
+ 
   constructor(private http: HttpClient) { }
 
    getParticipants():Observable<Participant[]> {
-    console.log(this.http.get<Participant[]>(this.apiUrl))
-    return this.http.get<Participant[]>(this.apiUrl);
+     const apiUrl = "http://localhost:3000/user";
+    console.log(this.http.get<Participant[]>(apiUrl))
+    return this.http.get<Participant[]>(apiUrl);
   }
   // deleteParticipant(task:Task):Observable<Task>{
   //   const url=`${this.apiUrl}/${task.id}`
@@ -29,16 +30,19 @@ private apiUrl = "http://localhost:3000/participant"
   // }
 
   addParticipant(participant:Participant):Observable<Participant>{
+    const apiUrl = "http://localhost:3000/user";
     console.log(participant)
-    return this.http.post<Participant>(this.apiUrl,participant)}
+    return this.http.post<Participant>(apiUrl,participant)
+  }
  
    
    
     modifyParticipant(participant:Participant):Observable<Participant>{
-    console.log("task",participant)
-    // const body = { title: 'Angular PUT Request Example' };
-    const url=`${this.apiUrl}/${participant.id}`
-    return this.http.put<Participant>(url,participant)
+      const apiUrl = "http://localhost:3000/user";
+      console.log("task",participant)
+      // const body = { title: 'Angular PUT Request Example' };
+      const url=`${apiUrl}/${participant.id}`
+      return this.http.put<Participant>(url,participant)
         
   }
 }

@@ -2,31 +2,31 @@ import * as  Mongoose  from 'mongoose';
 import { UserRoleEnum } from 'src/enum/user-role';
 // TO DO : missing fields (see models.ts)
 export const AbassadeurSchema = new Mongoose.Schema({
-    firstName: { type: String},
-    lastName: { type: String},
-    email: { type: String, required:true},
-    password: { type: String},
-    phone: { type: String},
-    sexe:{ type: String },
-    gouvernerat:{ type: String },
-    universite:{ type: String },
-    paye:{ type: Boolean },
+  FirstName: { type: String},
+  LastName: { type: String},
+  mail: { type: String, required:true},
+  psw: { type: String},
+  Phone: { type: Number},
+    Gender:{ type: String },
+    governorate:{ type: String },
+    university:{ type: String },
     cin:{type: Number},
-    birthday:{type:Date},
+    DateOfBirth:{type:Date},
     role:{type:String,default:UserRoleEnum.Ambassadeur}
   });
 
 export interface Ambassadeur extends Mongoose.Document {  
   id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  password:string;
-  phone:number;
-  sexe:string;
-  birthday:Date;
-  gouvernerat:string;
-  universite:string;
+  cin:Number;
+  FirstName: string;
+  LastName: string;
+  mail: string;
+  psw:string,
+  Gender: string;
+  DateOfBirth: string;
+  Phone: Number;
+  governorate: string;
+  university: string;
   role : UserRoleEnum;
   
 }

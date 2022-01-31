@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import {AmbassadeurService} from "../service/ambassadeur.service"
 
 @Component({
   selector: 'app-ambassadeurs',
@@ -10,14 +11,18 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class AmbassadeursComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ambassadeurService:AmbassadeurService) { }
 
   selected:boolean=false
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions!: Observable<string[]>;
-
+  AmbassadeurList :any[]=[]
   ngOnInit() {
-   
+    this.ambassadeurService.getAmbassadeurs().subscribe((ambassadeur)=>{
+      this.AmbassadeurList=ambassadeur
+      console.log(ambassadeur)
+ 
+    })
   
   }
 onchange(e:any){

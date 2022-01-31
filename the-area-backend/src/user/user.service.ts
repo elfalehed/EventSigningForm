@@ -11,16 +11,16 @@ export class UserService {
   ) { }
   async Adduser(user: any) {
     const newUser = new this.userModel({
-      firstName: user.firstname,
-      lastName: user.lastname,
-      email: user.email,
+      FirstName: user.FirstName,
+      LastName: user.LastName,
+      mail: user.mail,
       cin:user.cin,
-      sexe:user.sexe,
-      birthday:user.birthday,
-      tel:user.tel,
-      gouvernerat:user.gouvernerat,
-      universite:user.universite,
-      paye:user.paye,
+      Gender:user.sexe,
+      DateOfBirth:user.DateOfBirth,
+      Phone:user.Phone,
+      governorate:user.governorate,
+      university:user.university,
+      pay:user.pay,
     });
 
     return newUser.save()

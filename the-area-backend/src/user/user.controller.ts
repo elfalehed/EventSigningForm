@@ -10,10 +10,12 @@ export class UserController {
     @Post('adduser')
     async registreUser( @Body() user :any){
         const users = this.userserv.Adduser(user);
+        console.log(users)
         return users
     }
     @Get('allUsers')
     async getAllUser(){
+        
         return await this.userserv.allUsers();
     }
 }

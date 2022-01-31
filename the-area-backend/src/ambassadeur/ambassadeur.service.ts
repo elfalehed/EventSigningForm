@@ -11,19 +11,19 @@ export class AmbassadeurService {
       ) { }
 async Addambassadeur(ambassadeur: any) {
 
-  const hashedPassword = await bcrypt.hash(ambassadeur.password, 10);
+  const hashedPassword = await bcrypt.hash(ambassadeur.psw, 10);
     const newambassadeur = new this.ambassadeurModel({
-      firstName: ambassadeur.firstname,
-      lastName: ambassadeur.lastname,
-      email: ambassadeur.email,
-      password: hashedPassword,
-      phone:ambassadeur.phone,
+      FirstName: ambassadeur.FirstName,
+      LastName: ambassadeur.LastName,
+      mail: ambassadeur.mail,
+      psw: hashedPassword,
+      Phone:ambassadeur.Phone,
       cin:ambassadeur.cin,
-      sexe:ambassadeur.sexe,
-      birthday:ambassadeur.birthday,
-      gouvernerat:ambassadeur.gouvernerat,
-      universite:ambassadeur.universite,
-      role:ambassadeur.role
+      Gender:ambassadeur.Gender,
+      DateOfBirth:ambassadeur.DateOfBirth,
+      governorate:ambassadeur.governorate,
+      university:ambassadeur.university,
+    
     });
 
     return newambassadeur.save()

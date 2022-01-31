@@ -1,0 +1,33 @@
+		<mat-tab-group>
+			<mat-tab label="Blog editor">
+        <div class="blog-editor">
+          <form [formGroup]="editorform" (ngSubmit)="onSubmit()">
+            
+            <div class="form-group">
+              <label>https://ubiai.tools/blog/article/ </label>
+                <input type="text" formControlName="url"><br/>
+                <label>Title </label><br/>
+                <input type="text" formControlName="title">
+                <br/>
+                <label>image </label><br/>
+                <input type="file" name="myImage" accept="image/*" formControlName="cover"/>
+                             <br>
+                <label>Editeur</label>
+                <quill-editor  [(ngModel)]="content" [styles]="editorStyle" formControlName="editor" (onContentChanged)="maxLength($event)" ></quill-editor>
+            </div>
+            <button class="btn btn-primary mt-5" >Submit</button>
+          </form>
+        </div>
+			</mat-tab>
+			<mat-tab label="Preview"> 	
+        <h1>{{blogTitle}}</h1>	
+        <img [src]="blogCover">
+        <div class="preview" [innerHtml]="htmlContent">
+
+        </div>
+	 </mat-tab>
+
+  </mat-tab-group>
+
+
+   

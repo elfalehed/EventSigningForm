@@ -1,5 +1,5 @@
 {
-  "participant": [
+  "user": [
     {
       "cin": "1340766",
       "FirstName": "fahmi",
@@ -90,6 +90,19 @@
       "university": "institut supérieur d'informatique de medenine",
       "pay": true,
       "id": 12
+    },
+    {
+      "cin": "1340766",
+      "FirstName": "amine",
+      "LastName": "bay",
+      "mail": "fahmidouiri@gmail.com",
+      "Gender": "Male",
+      "DateOfBirth": "2022-01-30",
+      "Phone": "52002119",
+      "governorate": "Ariana",
+      "university": "institut supérieur d'informatique de tunis ",
+      "pay": false,
+      "id": 13
     }
   ],
   "ambassadeur": [

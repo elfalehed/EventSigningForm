@@ -11,10 +11,12 @@ export class AmbassadeurController {
 @Post('addamb')
 async registreAmbassadeur( @Body() Ambasadeur :any){
     const ambasadeur = this.ambservice.Addambassadeur(Ambasadeur);
+    console.log(ambasadeur)
     return ambasadeur
 }
 @Get('allamb')
 async getAllUser(){
+    console.log("hello")
     return await this.ambservice.allambassadeur();
 }
 @Get('/:id')

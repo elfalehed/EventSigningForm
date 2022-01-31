@@ -22,13 +22,19 @@ export class AmbassadeurService {
   constructor(private http: HttpClient) { }
 
   getAmbassadeurs():Observable<Ambassadeur[]> {
-    const apiUrl = "http://localhost:3000/ambassadeur/allamb"
+    const apiUrl = "http://localhost:3000/ambassadeur"
     console.log(this.http.get<Ambassadeur[]>(apiUrl))
     return this.http.get<Ambassadeur[]>(apiUrl);
   }
 
+  getOneAmbassadeurs(id:number):Observable<Ambassadeur[]> {
+    const apiUrl = "http://localhost:3000/ambassadeur"
+    console.log(this.http.get<Ambassadeur[]>(`${apiUrl}/${id}`))
+    return this.http.get<Ambassadeur[]>(`${apiUrl}/${id}`);
+  }
+
   addAmbassadeur(ambassadeur:Ambassadeur):Observable<Ambassadeur>{
-     const apiUrl = "http://localhost:3000/ambassadeur/addamb"
+     const apiUrl = "http://localhost:3000/ambassadeur"
     console.log(ambassadeur)
     return this.http.post<Ambassadeur>(apiUrl,ambassadeur)
   }

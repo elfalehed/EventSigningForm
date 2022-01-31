@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Participant} from "../../participant";
 import {ParticipantService} from "../service/participant.service"
+import {AmbassadeurService} from "../service/ambassadeur.service"
+
 
 @Component({
   selector: 'app-ambassadeur-dash',
@@ -58,10 +60,11 @@ export class AmbassadeurDashComponent implements OnInit {
     console.log(participant)
   }
 
-  constructor(private participantService : ParticipantService) { }
+  constructor(private participantService : ParticipantService ,private ambassadeurService: AmbassadeurService) { }
 
   ngOnInit(): void {
     this.participantService.getParticipants().subscribe((participant:Participant[])=>{
+      console.log(participant)
       this.ParticipantList=participant
       this.payList = participant.filter(
         Part => Part.pay==true );
@@ -70,6 +73,9 @@ export class AmbassadeurDashComponent implements OnInit {
           (Part:Participant) => Part.pay==false );
     })
 
+    this.ambassadeurService.getOneAmbassadeurs(12).subscribe(ambassadeur=>{
+      console.log(ambassadeur)
+    })
 
   }
 
