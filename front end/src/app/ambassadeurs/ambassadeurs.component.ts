@@ -17,9 +17,11 @@ export class AmbassadeursComponent implements OnInit {
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions!: Observable<string[]>;
   AmbassadeurList :any[]=[]
+  Ambassadeur:any={}
   ngOnInit() {
     this.ambassadeurService.getAmbassadeurs().subscribe((ambassadeur)=>{
       this.AmbassadeurList=ambassadeur
+
       console.log(ambassadeur)
  
     })
@@ -27,9 +29,15 @@ export class AmbassadeursComponent implements OnInit {
   }
 onchange(e:any){
   console.log(e.target.value)
-  if(e.target.value=="institut supérieur d'informatique de medenine"){
-    this.selected=true;
-  }
+  // if(e.target.value=="institut supérieur d'informatique de medenine"){
+  //   this.selected=true;
+  // }
+
+  this.Ambassadeur=this.AmbassadeurList.find(amb=>amb.governorate=e.target.value)
+  this.selected=true;
+  
+
+
 
 }
 

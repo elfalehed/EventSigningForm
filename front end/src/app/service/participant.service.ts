@@ -20,7 +20,7 @@ export class ParticipantService {
   constructor(private http: HttpClient) { }
 
    getParticipants():Observable<Participant[]> {
-     const apiUrl = "http://localhost:3000/user";
+     const apiUrl = "http://localhost:3000/afficher_participant";
     console.log(this.http.get<Participant[]>(apiUrl))
     return this.http.get<Participant[]>(apiUrl);
   }
@@ -30,7 +30,7 @@ export class ParticipantService {
   // }
 
   addParticipant(participant:Participant):Observable<Participant>{
-    const apiUrl = "http://localhost:3000/user";
+    const apiUrl = "http://localhost:3000/inscrit_participant ";
     console.log(participant)
     return this.http.post<Participant>(apiUrl,participant)
   }
@@ -38,7 +38,7 @@ export class ParticipantService {
    
    
     modifyParticipant(participant:Participant):Observable<Participant>{
-      const apiUrl = "http://localhost:3000/user";
+      const apiUrl = "http://localhost:3000//modifier_user";
       console.log("task",participant)
       // const body = { title: 'Angular PUT Request Example' };
       const url=`${apiUrl}/${participant.id}`
