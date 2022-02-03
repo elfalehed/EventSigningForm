@@ -13,11 +13,11 @@
 		<tbody>
 
 			<tr *ngFor="let participant of AmbassadeurList">
-				<td>{{participant.firstName+" "+participant.lastName}} </td>
-				<td>{{participant.universite}} </td>
+				<td>{{participant.FirstName+" "+participant.LastName}} </td>
+				<td>{{participant.university}} </td>
 				<td>{{participant.governorate}} </td>
-				<td>{{participant.sexe}}</td>
-				<td>{{participant.cin}}</td>
+				<td>{{participant.Gender}}</td>
+				<td>{{participant.Phone}}</td>
 				<td>{{participant.mail}}</td>
 				
 			</tr>
@@ -168,9 +168,9 @@
 
 			<tr *ngFor="let participant of AmbassadeurList">
 				<td>{{participant.FirstName+" "+participant.LastName}} </td>
-				<td>{{participant.universite}} </td>
+				<td>{{participant.university}} </td>
 				<td>{{participant.governorate}} </td>
-				<td>{{participant.sexe}}</td>
+				<td>{{participant.Gender}}</td>
 				<td>{{participant.cin}}</td>
 				<td>{{participant.mail}}</td>
 				<!-- <td>

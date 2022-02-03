@@ -11,32 +11,32 @@ import {AmbassadeurService} from "../service/ambassadeur.service"
 })
 export class AmbassadeurDashComponent implements OnInit {
   ParticipantList : Participant[]=[
-    {
-    id:1  ,
-    cin: "13467075",
-    FirstName: "Fahmi",
-    LastName: "Ben Z",
-    mail: "fahmi@gmail.com",
-    Gender: "Male",
-    DateOfBirth: "14/08/95",
-    Phone: 52002119,
-    governorate: "Mednine",
-    university: "Isimed",
-    pay : true
-    },
-    {
-      id:2,
-    cin: "13467070",
-    FirstName: "amine",
-    LastName: "bay",
-    mail: "fahmi@gmail.com",
-    Gender: "Male",
-    DateOfBirth: "14/08/95",
-    Phone: 52002119,
-    governorate: "Mednine",
-    university: "Isimed",
-    pay : false
-    }
+    // {
+    // id:1  ,
+    // cin: "13467075",
+    // FirstName: "Fahmi",
+    // LastName: "Ben Z",
+    // mail: "fahmi@gmail.com",
+    // Gender: "Male",
+    // DateOfBirth: "14/08/95",
+    // Phone: 52002119,
+    // governorate: "Mednine",
+    // university: "Isimed",
+    // pay : true
+    // },
+    // {
+    //   id:2,
+    // cin: "13467070",
+    // FirstName: "amine",
+    // LastName: "bay",
+    // mail: "fahmi@gmail.com",
+    // Gender: "Male",
+    // DateOfBirth: "14/08/95",
+    // Phone: 52002119,
+    // governorate: "Mednine",
+    // university: "Isimed",
+    // pay : false
+    // }
    
    
   ]
@@ -47,7 +47,7 @@ export class AmbassadeurDashComponent implements OnInit {
    
     participant.pay=! participant.pay
     this.ParticipantList.map(p=>{
-      if(p.id==participant.id){
+      if(p._id==participant._id){
           p=participant
       }
     })
@@ -73,15 +73,15 @@ export class AmbassadeurDashComponent implements OnInit {
           (Part:Participant) => Part.pay==false );
     })
 
-    this.ambassadeurService.getOneAmbassadeurs(12).subscribe(ambassadeur=>{
-      console.log(ambassadeur)
-    })
+    // this.ambassadeurService.getOneAmbassadeurs(12).subscribe(ambassadeur=>{
+    //   console.log(ambassadeur)
+    // })
 
   }
 
   modifyTask(participant:Participant){
-    this.participantService.modifyParticipant(participant).subscribe((data:any) => participant.id = data.id);
-    console.log(participant.id)
+    this.participantService.modifyParticipant(participant).subscribe((data:any) => participant._id = data._id);
+    console.log(participant._id)
     
     // this.taskService.getTasks().subscribe((task)=>(this.tasks=task))
     // this.participantService.getParticipants().subscribe((participant:Participant[])=>{

@@ -16,17 +16,19 @@ const httpOptions = {
 })
 export class FinancierService {
 
-  private apiUrl = "http://localhost:3000/financier"
+  private apiUrl = "http://localhost:3000/user"
   constructor(private http: HttpClient) { }
 
   getFinanciers():Observable<Financier[]> {
-    console.log(this.http.get<Financier[]>(this.apiUrl))
-    return this.http.get<Financier[]>(this.apiUrl);
+    const Url="http://localhost:3000/user/afficher_financier"
+    console.log(this.http.get<Financier[]>(Url))
+    return this.http.get<Financier[]>(Url);
   }
 
   addFinancier(financier:Financier):Observable<Financier>{
+    const Url="http://localhost:3000/user/ajouter_financier"
     console.log(financier)
-    return this.http.post<Financier>(this.apiUrl,financier)
+    return this.http.post<Financier>(Url,financier)
   }
  
 

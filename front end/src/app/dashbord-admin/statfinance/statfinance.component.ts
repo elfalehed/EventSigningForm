@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FianceservService } from 'src/app/fianceserv.service';
+import { ParticipantService } from 'src/app/service/participant.service';
+import { Participant } from 'src/participant';
 
 @Component({
   selector: 'app-statfinance',
@@ -9,13 +11,18 @@ import { FianceservService } from 'src/app/fianceserv.service';
 export class StatfinanceComponent implements OnInit {
 
   myDropDown : string="chh";
-  particepant:any[]=[];
+  ParticipantList:any[]=[];
   gouvernerat!:string;
   govParticepant:any[]=[];
   facList:any[]=[]
-  constructor(private serv:FianceservService) { }
+  constructor(private participantService : ParticipantService ,private serv:FianceservService) { }
   ngOnInit(): void {
-  this.getdb()
+    this.participantService.getParticipants().subscribe((participant:Participant[])=>{
+      console.log(participant)
+      this.ParticipantList=participant
+      
+ 
+    })
   }
   onChangeofOptions(newGov:any) {
    this.gouvernerat=newGov;
@@ -36,11 +43,16 @@ export class StatfinanceComponent implements OnInit {
 justTest(){
   return "hello"
 }
-getdb(){
-  this.serv.getdata().subscribe((data)=>{
-    this.particepant=data
-  })
+
+whoPay(ParticipantList:any){
+  let n =0;
+
+  for (let entry of ParticipantList) {
+    if(entry.pay==true) n++;
 }
 
+return n
+
+}
 
 }

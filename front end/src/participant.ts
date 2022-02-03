@@ -1,5 +1,5 @@
 export interface Participant {
-    id?: Number;
+    _id?: Number;
     cin:string;
     FirstName: string;
     LastName: string;

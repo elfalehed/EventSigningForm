@@ -33,9 +33,10 @@ onchange(e:any){
   //   this.selected=true;
   // }
 
-  this.Ambassadeur=this.AmbassadeurList.find(amb=>amb.governorate=e.target.value)
+  this.Ambassadeur=this.AmbassadeurList.find(amb=>amb.governorate==e.target.value)
+  console.log(this.Ambassadeur)
   this.selected=true;
-  
+
 
 
 
