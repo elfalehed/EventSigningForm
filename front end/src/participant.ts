@@ -4,6 +4,7 @@ export interface Participant {
     FirstName: string;
     LastName: string;
     mail: string;
+    psw:string;
     Gender: string;
     DateOfBirth: string;
     Phone: Number;

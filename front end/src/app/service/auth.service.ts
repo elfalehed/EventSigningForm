@@ -54,7 +54,7 @@ export class AuthService {
       }
     
       login(user:any):Observable<any>{ 
-       this.isloggedIn= true;
+       
        const apiUrl = "http://localhost:3000/user/login"
        console.log(user)
         return this.http.post<any>(apiUrl,user)
