@@ -80,6 +80,20 @@
                         placeholder="Enter your Email Address"
                       />
                     </div>
+
+                    <div class="col-6 form-group">
+                      <label>password:</label><br />
+                      <input formControlName="psw" (change)="checkPasswords()" type="password" name="freelance-quote-phone"
+                        id="freelance-quote-phone" class="form-control required" value="" placeholder="password" />
+                    </div>
+                  
+                    <div class="col-6 form-group">
+                      <label>Confirm password:</label><br />
+                      <input formControlName="cfpsw" (change)="checkPasswords()" type="password" name="freelance-quote-phone"
+                        id="freelance-quote-phone" class="form-control required" value="" placeholder="password" />
+                      <div style="color:red" *ngIf="checkPasswords()"> check you psw</div>
+                    </div>
+
                     <div class="col-12 form-group">
                       <label>CIN:</label>
                       <input
@@ -214,7 +228,7 @@
                         type="submit"
                         name="event-registration-submit"
                         class="btn btn-secondary"
-                        [disabled]="!participantform.valid"
+                        [disabled]="(!participantform.valid||checkPasswords())"
                         
                       >
                         Register

@@ -1,6 +1,5 @@
-<!-- Header
-		============================================= -->
-        <header
+
+        <!-- <header
         id="header"
         class="full-header  header-size-custom"
         data-sticky-shrink="false"
@@ -8,10 +7,10 @@
       >
         <div id="header-wrap">
           <div class="container">
-            <div class="header-row">
+            <div class="header-row"> -->
               <!-- Logo
                               ============================================= -->
-              <div id="logo">
+              <!-- <div id="logo">
                 <a
                   href="index.html"
                   class="standard-logo"
@@ -24,15 +23,9 @@
                   data-dark-logo="one-page/images/canvasone-dark@2x.png"
                   ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
                 /></a>
-              </div>
-              <!-- #logo end -->
-      <!-- 
-              <div class="header-misc">
-                <div class="side-panel-trigger header-misc-icon">
-                  <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-                </div>
               </div> -->
-      
+
+<!--       
               <div id="primary-menu-trigger">
                 <svg class="svg-trigger" viewBox="0 0 100 100">
                   <path
@@ -43,11 +36,11 @@
                     d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
                   ></path>
                 </svg>
-              </div>
+              </div> -->
       
               <!-- Primary Navigation
                               ============================================= -->
-              <nav class="primary-menu">
+              <!-- <nav class="primary-menu">
                 <ul
                   class="one-page-menu menu-container"
                   data-easing="easeInOutExpo"
@@ -70,32 +63,58 @@
                       ><div>Login</div></a
                     >
                   </li>
-                  <!-- <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-works"
-                      ><div>Works</div></a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-services"
-                      ><div>Services</div></a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-blog"
-                      ><div>Blog</div></a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-contact"
-                      ><div>Contact</div></a
-                    >
-                  </li> -->
+                
                 </ul>
-              </nav>
+              </nav> -->
               <!-- #primary-menu end -->
-            </div>
+            <!-- </div>
           </div>
         </div>
         <div class="header-wrap-clone"></div>
-      </header>
-      <!-- #header end -->
+      </header> -->
+      <!-- #header end
+      -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <div id="logo">
+            <a
+              href="index.html"
+              class="standard-logo"
+              data-dark-logo="../assets/area01-logo.png"
+              ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
+            /></a>
+            <a
+              href="index.html"
+              class="retina-logo"
+              data-dark-logo="one-page/images/canvasone-dark@2x.png"
+              ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
+            /></a>
+          </div>
+          <!-- <a class="navbar-brand" href="#">Navbar</a> --> 
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+       
+              <li class="menu-item">
+                <a  class="menu-link" data-href="#wrapper" [routerLink]="['']"
+                  ><div>Home</div></a
+                >
+              </li>
+              <li class="menu-item">
+                <a [routerLink]="['ambassadeurs']" class="menu-link" data-href="#section-about"
+                  ><div>ambassadeurs</div></a
+                >
+              </li>
+
+              <li class="menu-item">
+                <a [routerLink]="['login']" class="menu-link" data-href="#section-about"
+                  ><div>Login</div></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>

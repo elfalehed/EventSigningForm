@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit {
       FirstName : ['',Validators.required],
       LastName : ['',Validators.required],
       email : ['',Validators.email],
+      psw:['',Validators.required],
+      cfpsw:['',Validators.required],
       cin : ['',Validators.required],
       gender : ['',Validators.required],
       dateOfBirth : ['',Validators.required],
@@ -77,6 +79,7 @@ onSubmit(){
        FirstName :this.participantform.value.FirstName,
        LastName :this.participantform.value.LastName,
        mail :this.participantform.value.email,
+       psw :this.participantform.value.psw,
        Gender :this.participantform.value.gender,
        DateOfBirth :this.participantform.value.dateOfBirth,
        Phone :this.participantform.value.phone,
@@ -92,4 +95,14 @@ else {
 }
   
 }
+
+checkPasswords() { // here we have the 'passwords' group
+  const password = this.participantform.value.psw;
+  const confirmPassword = this.participantform.value.cfpsw;
+ 
+  return password === confirmPassword ? null : { notSame: true }
+    
+}
+
+
 }
