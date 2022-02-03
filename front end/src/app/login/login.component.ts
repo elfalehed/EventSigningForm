@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginform!:FormGroup;
+  constructor(private authserv :AuthService ,private router: Router,private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.loginform =this.formBuilder.group({
+
+      mail:['',], 
+      password:['',]
+    })
   }
+  onLoggedin(){
+    console.log("azerty",this.loginform.value)
+     this.authserv.login(this.loginform.value).subscribe(user=>{console.log("userfron back",user.user.role)
+      this.authserv.saveToken(user.token)
+      if(user.user.role==="admin"){
+        this.router.navigate(['/Admin-dash'])
+      } 
+      if(user.user.role==="Ambassadeur"){
+        this.router.navigate(['/ambassadeurs-dash'])
+      }
+      if(user.user.role==="Financier"){
+        this.router.navigate(['/finance-dash'])
+      }
+      else{
+        console.log("aaaaaaaaaaa")
+      }
+
+    }
+     
+    );
+    
+   
+  }
+   
+    
 
 }

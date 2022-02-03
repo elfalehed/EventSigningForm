@@ -7,16 +7,17 @@ import { HomeComponent } from './home/home.component';
 import { DashbordItComponent } from './dashbord-it/dashbord-it.component';
 import { AddAmbassadeurComponent } from './dashbord-it/add-ambassadeur/add-ambassadeur.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGardService } from './service/auth-gard.service';
 const routes: Routes = [
   // { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `first-component`
   { path: '', component: HomeComponent},
   { path: 'ambassadeurs', component: AmbassadeursComponent },
-  { path: 'ambassadeurs-dash', component: AmbassadeurDashComponent },
-  { path: 'finance-dash', component: DashbordAdminComponent },
-  { path: 'Admin-dash', component: DashbordItComponent },
+  { path: 'ambassadeurs-dash', canActivate:[AuthGardService],component: AmbassadeurDashComponent },
+  { path: 'finance-dash',canActivate:[AuthGardService], component: DashbordAdminComponent },
+  { path: 'Admin-dash',canActivate:[AuthGardService],component: DashbordItComponent },
   { path: 'amb', outlet:"dashbord",component: AddAmbassadeurComponent},
   { path: 'login', component: LoginComponent},
-  // { path: '**', component: PageNotFoundComponent },
+  { path: 'home', component: HomeComponent },
 ];
 
 @NgModule({

@@ -1,6 +1,5 @@
-<!-- Header
-		============================================= -->
-        <header
+<!-- Header lgdima ============================================= -->
+        <!-- <header
         id="header"
         class="full-header  header-size-custom"
         data-sticky-shrink="false"
@@ -9,8 +8,7 @@
         <div id="header-wrap">
           <div class="container">
             <div class="header-row">
-              <!-- Logo
-                              ============================================= -->
+             
               <div id="logo">
                 <a
                   href="index.html"
@@ -25,13 +23,7 @@
                   ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
                 /></a>
               </div>
-              <!-- #logo end -->
-      <!-- 
-              <div class="header-misc">
-                <div class="side-panel-trigger header-misc-icon">
-                  <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-                </div>
-              </div> -->
+             
       
               <div id="primary-menu-trigger">
                 <svg class="svg-trigger" viewBox="0 0 100 100">
@@ -45,8 +37,7 @@
                 </svg>
               </div>
       
-              <!-- Primary Navigation
-                              ============================================= -->
+           
               <nav class="primary-menu">
                 <ul
                   class="one-page-menu menu-container"
@@ -65,37 +56,89 @@
                     >
                   </li>
 
-                  <li class="menu-item">
+                  <li class="menu-item" *ngIf="this.authService.isloggedIn == false" >
                     <a [routerLink]="['login']" class="menu-link" data-href="#section-about"
-                      ><div>Login</div></a
+                      ><div>login</div></a
                     >
                   </li>
-                  <!-- <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-works"
-                      ><div>Works</div></a
+                  <li class="menu-item" *ngIf="this.authService.isloggedIn == true">
+                    <a (click)="logout()" class="menu-link" data-href="#section-about"
+                      ><div>logout</div></a
                     >
                   </li>
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-services"
-                      ><div>Services</div></a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-blog"
-                      ><div>Blog</div></a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="#" class="menu-link" data-href="#section-contact"
-                      ><div>Contact</div></a
-                    >
-                  </li> -->
-                </ul>
-              </nav>
-              <!-- #primary-menu end -->
+                  
             </div>
           </div>
         </div>
         <div class="header-wrap-clone"></div>
-      </header>
-      <!-- #header end -->
+      </header> -->
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+<!-- Header jdida ============================================= -->
+
+
+
+
+
+
+
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <div id="logo">
+            <a
+              [routerLink]="['/']"
+              class="standard-logo"
+              data-dark-logo="../assets/area01-logo.png"
+              ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
+            /></a>
+            
+          </div>
+          <!-- <a class="navbar-brand" href="#">Navbar</a> --> 
+
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+       
+              <li class="menu-item">
+                <a  class="menu-link" data-href="#wrapper" [routerLink]="['']"
+                  ><div>Home</div></a
+                >
+              </li>
+              <li class="menu-item">
+                <a [routerLink]="['ambassadeurs']" class="menu-link" data-href="#section-about"
+                  ><div>ambassadeurs</div></a
+                >
+              </li>
+
+              <li class="menu-item" *ngIf="this.authService.isloggedIn == false" >
+                <a [routerLink]="['login']" class="menu-link" data-href="#section-about"
+                  ><div>login</div></a
+                >
+              </li>
+              <li class="menu-item" *ngIf="this.authService.isloggedIn == true">
+                <a (click)="logout()" class="menu-link" data-href="#section-about"
+                  ><div>logout</div></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
