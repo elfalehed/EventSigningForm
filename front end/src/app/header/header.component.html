@@ -1,96 +1,3 @@
-<!-- Header lgdima ============================================= -->
-        <!-- <header
-        id="header"
-        class="full-header  header-size-custom"
-        data-sticky-shrink="false"
-        data-sticky-offset="full"
-      >
-        <div id="header-wrap">
-          <div class="container">
-            <div class="header-row">
-             
-              <div id="logo">
-                <a
-                  href="index.html"
-                  class="standard-logo"
-                  data-dark-logo="../assets/area01-logo.png"
-                  ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
-                /></a>
-                <a
-                  href="index.html"
-                  class="retina-logo"
-                  data-dark-logo="one-page/images/canvasone-dark@2x.png"
-                  ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
-                /></a>
-              </div>
-             
-      
-              <div id="primary-menu-trigger">
-                <svg class="svg-trigger" viewBox="0 0 100 100">
-                  <path
-                    d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
-                  ></path>
-                  <path d="m 30,50 h 40"></path>
-                  <path
-                    d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
-                  ></path>
-                </svg>
-              </div> 
-      
-           
-              <nav class="primary-menu">
-                <ul
-                  class="one-page-menu menu-container"
-                  data-easing="easeInOutExpo"
-                  data-speed="1250"
-                  data-offset="65"
-                >
-                  <li class="menu-item">
-                    <a  class="menu-link" data-href="#wrapper" [routerLink]="['']"
-                      ><div>Home</div></a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a [routerLink]="['ambassadeurs']" class="menu-link" data-href="#section-about"
-                      ><div>ambassadeurs</div></a
-                    >
-                  </li>
-
-                  <li class="menu-item" *ngIf="this.authService.isloggedIn == false" >
-                    <a [routerLink]="['login']" class="menu-link" data-href="#section-about"
-                      ><div>login</div></a
-                    >
-                  </li>
-                  <li class="menu-item" *ngIf="this.authService.isloggedIn == true">
-                    <a (click)="logout()" class="menu-link" data-href="#section-about"
-                      ><div>logout</div></a
-                    >
-                  </li>
-                  
-            </div>
-          </div>
-        </div>
-        <div class="header-wrap-clone"></div>
-      </header> -->
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-<!-- Header jdida ============================================= -->
-
 
 
 
@@ -134,7 +41,7 @@
                 >
               </li>
               <li class="menu-item" *ngIf="this.authService.isloggedIn == true">
-                <a (click)="logout()" class="menu-link" data-href="#section-about"
+                <a (click)="logout()" style="cursor: pointer;" class="menu-link" data-href="#section-about"
                   ><div>logout</div></a
                 >
               </li>

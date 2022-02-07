@@ -18,7 +18,8 @@ export class AuthGardService implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.authService.isloggedIn !== true) {
+      
+    if (localStorage.getItem('isloggedIn') === "false" ) {
       
       this.route.navigate(['/home']);
     }

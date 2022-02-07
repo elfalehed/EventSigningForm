@@ -19,44 +19,21 @@ export class AuthService {
   constructor(private router: Router,private http: HttpClient) { }
   
   logout() {
-    this.isloggedIn= false;
-    this.loggedUser!= undefined;
-    
-    localStorage.removeItem('loggedUser');
-    localStorage.setItem('isloggedIn',String(this.isloggedIn));
+    this.isloggedIn=true
     this.router.navigate(['/']);
     }
     saveToken(jwt:string){
       localStorage.setItem('jwt',jwt);
       this.token = jwt;
-      this.isloggedIn = true; 
-      this.decodeJWT();
-
-      }
-      isTokenExpired(): Boolean{
-      return this.helper.isTokenExpired(this.token); }
-      loadToken() {
-        this.token != localStorage.getItem('jwt');
-        this.decodeJWT();
-
-      }
-      decodeJWT(){
-        if (this.token == undefined)
-        return;
-        const decodedToken = this.helper.decodeToken(this.token);
-
-        this.loggedUser = decodedToken.sub;
-      }
-
-      getToken():string {
-        return this.token;
-        
       }
     
       login(user:any):Observable<any>{ 
        
        const apiUrl = "http://localhost:3000/user/login"
        console.log(user)
+       this.isloggedIn= true;
+       localStorage.setItem('isloggedIn',String(this.isloggedIn));
         return this.http.post<any>(apiUrl,user)
       }   
 }
+ 

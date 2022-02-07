@@ -1,344 +1,190 @@
-
-      <!-- Slider
+<!-- Slider
               ============================================= -->
-      <section
-        id="slider"
-        class="slider-element  min-vh-100 "
-      >
-        <div class="slider-inner">
-          <div
-            class="row align-items-stretch position-relative position-md-absolute position-lg-relative w-100 h-100 m-0"
-          >
-            <div class="col-xl-5 col-md-6" style="background-color: #fff">
-              <div class="vertical-middle subscribe-widget" data-loader="button">
-                <div class="col-padding">
-                  <div >
-                    <h1
-                     
-                      style="
+<section id="slider" class="slider-element  min-vh-100 ">
+  <div class="slider-inner">
+    <div class="row align-items-stretch position-relative position-md-absolute position-lg-relative w-100 h-100 m-0">
+      <div class="col-xl-5 col-md-6" style="background-color: #fff">
+        <div class="vertical-middle subscribe-widget" data-loader="button">
+          <div class="col-padding">
+            <div>
+              <h1 style="
                         line-height: 1.4;
                         font-size: 48px;
                         font-family: 'Playfair Display', serif;
                         font-weight: 400;
-                      "
-                    >
-                      Type and Subscribe
-                    </h1>
-                   
-                  </div>
-                  <div class="widget-subscribe-form-result"></div>
-      
-                
-      
-                  <form
-                  [formGroup]="participantform"
-                   (ngSubmit)="onSubmit()"
-                    class="row"
-                    id="event-registration"
-                    action="include/form.php"
-                    method="post"
-                    enctype="multipart/form-data"
-                  >
-                    <div class="form-process">
-                      <div class="css3-spinner">
-                        <div class="css3-spinner-scaler"></div>
-                      </div>
-                    </div>
-                    <div class="col-6 form-group">
-                      <label>First Name:</label>
-                      <input
-                      formControlName="FirstName"
-                        type="text"
-                        name="event-registration-first-name"
-                        id="event-registration-first-name"
-                        class="form-control required"
-                        value=""
-                        placeholder="Enter your First Name"
-                      />
-                    </div>
-                    <div class="col-6 form-group">
-                      <label>Last Name:</label>
-                      <input
-                      formControlName="LastName"
-                        type="text"
-                        name="event-registration-last-name"
-                        id="event-registration-last-name"
-                        class="form-control required"
-                        value=""
-                        placeholder="Enter your Last Name"
-                      />
-                    </div>
-                    <div class="col-12 form-group">
-                      <label>Email:</label>
-                      <input
-                      formControlName="email"
-                        type="email"
-                        name="event-registration-email"
-                        id="event-registration-email"
-                        class="form-control required"
-                        value=""
-                        placeholder="Enter your Email Address"
-                      />
-                    </div>
+                      ">
+                Type and Subscribe
+              </h1>
 
-                    <div class="col-6 form-group">
-                      <label>password:</label><br />
-                      <input formControlName="psw" (change)="checkPasswords()" type="password" name="freelance-quote-phone"
-                        id="freelance-quote-phone" class="form-control required" value="" placeholder="password" />
-                    </div>
-                  
-                    <div class="col-6 form-group">
-                      <label>Confirm password:</label><br />
-                      <input formControlName="cfpsw" (change)="checkPasswords()" type="password" name="freelance-quote-phone"
-                        id="freelance-quote-phone" class="form-control required" value="" placeholder="password" />
-                      <div style="color:red" *ngIf="checkPasswords()"> check you psw</div>
-                    </div>
-
-                    <div class="col-12 form-group">
-                      <label>CIN:</label>
-                      <input
-                      formControlName="cin"
-                        type="number"
-                        name="event-registration-id"
-                        id="event-registration-id"
-                        class="form-control required"
-                        value=""
-                        placeholder="Enter your CIN"
-                      />
-                    </div>
-                    <div class="col-6 form-group">
-                      <label>Gender:</label><br />
-                      <div class="form-check form-check-inline">
-                        <input
-                        formControlName="gender"
-                          class="form-check-input required"
-                          type="radio"
-                          name="gender"
-                          id="event-registration-gender-male"
-                          value="Male"
-                        />
-                        <label
-                          class="form-check-label nott"
-                          for="gender"
-                          >Male</label
-                        >
-                      </div>
-                      <div class="form-check form-check-inline">
-                        <input
-                        formControlName="gender"
-                          class="form-check-input"
-                          type="radio"
-                          name="gender"
-                          id="event-registration-gender-female"
-                          value="Female"
-                        />
-                        <label
-                          class="form-check-label nott"
-                          for="gender"
-                          >Female</label
-                        >
-                      </div>
-                    </div>
-                    <div class="col-6 form-group">
-                      <label>DATE OF BIRTH:</label>
-                      <input
-                      formControlName="dateOfBirth"
-                        type="date"
-                        name="event-registration-id"
-                        id="event-registration-id"
-                        class="form-control required"
-                        value=""
-                      />
-                    </div>
-                    <div class="col-6 form-group">
-                      <label>Phone:</label><br />
-                      <input
-                      formControlName="phone"
-                        type="number"
-                        name="freelance-quote-phone"
-                        id="freelance-quote-phone"
-                        class="form-control required"
-                        value=""
-                        placeholder="00-000-000"
-                      />
-                    </div>
-                    <div class="col-6 form-grou">
-                      <label>governorate</label>
-                      <select
-                      formControlName="governorate"
-                        class="form-select required"
-                        name="event-registration-passes"
-                        id="event-registration-passes"
-                      >
-                        <option value="">-- Select One --</option>
-                        <option value="Ariana">Ariana</option>
-                        <option value="Béja">Béja</option>
-                        <option value="Ben Arous">Ben Arous</option>
-                        <option value="Bizerte">Bizerte</option>
-                        <option value="Gabès">Gabès</option>
-                        <option value="Gafsa">Gafsa</option>
-                        <option value="Jendouba">Jendouba</option>
-                        <option value="Kairouan">Kairouan</option>
-                        <option value="Kasserine">Kasserine</option>
-                        <option value="Kébili">Kébili</option>
-                        <option value="Kef">Kef</option>
-                        <option value="Mahdia">Mahdia</option>
-                        <option value="Manouba">Manouba</option>
-                        <option value="Médenine">Médenine</option>
-                        <option value="Monastir">Monastir</option>
-                        <option value="Nabeul">Nabeul</option>
-                        <option value="Sfax">Sfax</option>
-                        <option value="Sidi Bouzid">Sidi Bouzid</option>
-                        <option value="Siliana">Siliana</option>
-                        <option value="Sousse">Sousse</option>
-                        <option value="Tataouine">Tataouine</option>
-                        <option value="Tozeur">Tozeur</option>
-                        <option value="">Tunis</option>
-                        <option value="Zaghouan">Zaghouan</option>
-                        <option value="">-- Select One --</option>
-                      </select>
-                    </div>
-      
-                    <div class="col-12">
-                      <div class="form-group">
-                        <label>university</label>
-                        <input
-                        formControlName="university"
-                        type="text"
-                        name="event-registration-last-name"
-                        id="event-registration-last-name"
-                        class="form-control required"
-                        value=""
-                        placeholder="Enter your university"
-                        list="ice-cream-flavors"
-                      />
-                        <datalist id="ice-cream-flavors">
-                          <option value="institut supérieur d'informatique de medenine">
-                            <option value="institut supérieur d'informatique de Mahdia">
-                            <option value="institut supérieur d'informatique de tunis ">
-                            <option value="institut supérieur d'informatique gabes">
-                      </datalist>
-                      </div>
-                    </div>
-           
-      
-    
-                    <div class="col-12">
-                      <button
-                        type="submit"
-                        name="event-registration-submit"
-                        class="btn btn-secondary"
-                        [disabled]="(!participantform.valid||checkPasswords())"
-                        
-                      >
-                        Register
-                      </button>
-                    </div>
-      
-                    <input type="hidden" name="prefix" value="event-registration-" />
-                  </form>
-      
-                  <!-- <div class="center mt-5">
-                    <a
-                      href="#"
-                      class="social-icon inline-block si-rounded si-colored si-small si-facebook mb-0 mx-2"
-                      title="Facebook"
-                    >
-                      <i class="fab fa-facebook-f fa-2x"></i>
-                      <i class="fab fa-facebook-f fa-2x"></i>
-                    </a>
-                    <a
-                      href="#"
-                      class="social-icon inline-block si-rounded si-colored si-small si-twitter mb-0 mx-2"
-                      title="Twitter"
-                    >
-                      <i class="fab fa-twitter fa-2x"></i>
-                      <i class="fab fa-twitter fa-2x"></i>
-                    </a>
-                    <a
-                      href="#"
-                      class="social-icon inline-block si-rounded si-colored si-small si-github mb-0 mx-2"
-                      title="Github"
-                    >
-                      <i class="icon-github"></i>
-                      <i class="icon-github"></i>
-                    </a>
-                    <a
-                      href="#"
-                      class="social-icon inline-block si-rounded si-colored si-small si-pinterest mb-0 mx-2"
-                      title="Pinterest"
-                    >
-                      <i class="icon-pinterest"></i>
-                      <i class="icon-pinterest"></i>
-                    </a>
-                  </div> -->
-              
-              
-              </div>
-              </div>
-              <a
-                href="#"
-                data-scrollto="#section-about"
-                data-easing="easeInOutExpo"
-                data-speed="1250"
-                data-offset="65"
-                class="one-page-arrow"
-                ><i class="icon-angle-down infinite animated fadeInDown"></i
-              ></a>
             </div>
-      
-            <div
-              class="col-xl-7 col-md-6 text-center p-0 min-vh-50"
-              style="
+            <div class="widget-subscribe-form-result"></div>
+
+
+
+            <form [formGroup]="participantform" (ngSubmit)="onSubmit()" class="row" id="event-registration"
+              action="include/form.php" method="post" enctype="multipart/form-data">
+              <div class="form-process">
+                <div class="css3-spinner">
+                  <div class="css3-spinner-scaler"></div>
+                </div>
+              </div>
+              <div class="col-6 form-group">
+                <label>First Name:</label>
+                <input formControlName="FirstName" type="text" name="event-registration-first-name"
+                  id="event-registration-first-name" class="form-control required" value=""
+                  placeholder="Enter your First Name" />
+              </div>
+              <div class="col-6 form-group">
+                <label>Last Name:</label>
+                <input formControlName="LastName" type="text" name="event-registration-last-name"
+                  id="event-registration-last-name" class="form-control required" value=""
+                  placeholder="Enter your Last Name" />
+              </div>
+              <div class="col-12 form-group">
+                <label>Email:</label>
+                <input formControlName="email" type="email" name="event-registration-email"
+                  id="event-registration-email" class="form-control required" value=""
+                  placeholder="Enter your Email Address" />
+              </div>
+
+              <div class="col-6 form-group">
+                <label>password:</label><br />
+                <input formControlName="psw" (change)="checkPasswords()" type="password" name="freelance-quote-phone"
+                  id="freelance-quote-phone" class="form-control required" value="" placeholder="password" />
+              </div>
+
+              <div class="col-6 form-group">
+                <label>Confirm password:</label><br />
+                <input formControlName="cfpsw" (change)="checkPasswords()" type="password" name="freelance-quote-phone"
+                  id="freelance-quote-phone" class="form-control required" value="" placeholder="password" />
+                <div style="color:red" *ngIf="checkPasswords()"> check you psw</div>
+              </div>
+
+              <div class="col-12 form-group">
+                <label>CIN:</label>
+                <input formControlName="cin" type="number" name="event-registration-id" id="event-registration-id"
+                  class="form-control required" value="" placeholder="Enter your CIN" />
+              </div>
+              <div class="col-6 form-group">
+                <label>Gender:</label><br />
+                <div class="form-check form-check-inline">
+                  <input formControlName="gender" class="form-check-input required" type="radio" name="gender"
+                    id="event-registration-gender-male" value="Male" />
+                  <label class="form-check-label nott" for="gender">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input formControlName="gender" class="form-check-input" type="radio" name="gender"
+                    id="event-registration-gender-female" value="Female" />
+                  <label class="form-check-label nott" for="gender">Female</label>
+                </div>
+              </div>
+              <div class="col-6 form-group">
+                <label>DATE OF BIRTH:</label>
+                <input formControlName="dateOfBirth" type="date" name="event-registration-id" id="event-registration-id"
+                  class="form-control required" value="" />
+              </div>
+              <div class="col-6 form-group">
+                <label>Phone:</label><br />
+                <input formControlName="phone" type="number" name="freelance-quote-phone" id="freelance-quote-phone"
+                  class="form-control required" value="" placeholder="00-000-000" />
+              </div>
+              <div class="col-6 form-grou">
+                <label>governorate</label>
+                <select formControlName="governorate" class="form-select required" name="event-registration-passes"
+                  id="event-registration-passes">
+                  <option value="">-- Select One --</option>
+                  <option value="Ariana">Ariana</option>
+                  <option value="Béja">Béja</option>
+                  <option value="Ben Arous">Ben Arous</option>
+                  <option value="Bizerte">Bizerte</option>
+                  <option value="Gabès">Gabès</option>
+                  <option value="Gafsa">Gafsa</option>
+                  <option value="Jendouba">Jendouba</option>
+                  <option value="Kairouan">Kairouan</option>
+                  <option value="Kasserine">Kasserine</option>
+                  <option value="Kébili">Kébili</option>
+                  <option value="Kef">Kef</option>
+                  <option value="Mahdia">Mahdia</option>
+                  <option value="Manouba">Manouba</option>
+                  <option value="Médenine">Médenine</option>
+                  <option value="Monastir">Monastir</option>
+                  <option value="Nabeul">Nabeul</option>
+                  <option value="Sfax">Sfax</option>
+                  <option value="Sidi Bouzid">Sidi Bouzid</option>
+                  <option value="Siliana">Siliana</option>
+                  <option value="Sousse">Sousse</option>
+                  <option value="Tataouine">Tataouine</option>
+                  <option value="Tozeur">Tozeur</option>
+                  <option value="">Tunis</option>
+                  <option value="Zaghouan">Zaghouan</option>
+                  <option value="">-- Select One --</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <div class="form-group">
+                  <label>university</label>
+                  <input formControlName="university" type="text" name="event-registration-last-name"
+                    id="event-registration-last-name" class="form-control required" value=""
+                    placeholder="Enter your university" list="ice-cream-flavors" />
+                  <datalist id="ice-cream-flavors">
+                    <option value="institut supérieur d'informatique de medenine">
+                    <option value="institut supérieur d'informatique de Mahdia">
+                    <option value="institut supérieur d'informatique de tunis ">
+                    <option value="institut supérieur d'informatique gabes">
+                  </datalist>
+                </div>
+              </div>
+
+
+
+              <div class="col-12">
+                <button type="submit" name="event-registration-submit" class="btn btn-secondary"
+                  [disabled]="(!participantform.valid||checkPasswords())">
+                  Register
+                </button>
+              </div>
+
+              <input type="hidden" name="prefix" value="event-registration-" />
+            </form>
+
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-xl-7 col-md-6 text-center p-0 min-vh-50" style="
                 background: url('../assets/op-subscription.jpg') center center
                   no-repeat;
                 background-size: cover;
                 z-index: -1;
-              "
-            >
-              <div class="vertical-middle dark center clearfix">
-                <div class="emphasis-title mb-0">
-                  <h1>
-                    <span
-                      class="text-rotater nocolor"
-                      data-separator="|"
-                      data-rotate="fadeIn"
-                      data-speed="6000"
-                    >
-                      <span class="t-rotate fw-bold font-body opm-medium-word"
-                        >canvas.|different.|creative.|digital.|vision.</span
-                      >
-                    </span>
-                  </h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- #slider end -->
-      
-      <!-- Content
+              ">
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- #slider end -->
+
+<!-- Content
               ============================================= -->
-      <section id="content">
-        <div class="content-wrap py-0">
-          <div id="section-about" class="center page-section">
-            <div class="container clearfix">
-              <h2
-                class="mx-auto bottommargin font-body"
-                style="max-width: 700px; font-size: 40px"
-              >
-               About
-              </h2>
-      
-              <p class="lead mx-auto bottommargin" style="max-width: 800px">
-                Ford Foundation reduce child mortality fight against oppression
-                refugee disruption pursue these aspirations effect. Free-speech Nelson
-                Mandela change liberal; challenges of our times sustainability
-                institutions.
-              </p>
-      
-              <!-- <p class="bottommargin" style="font-size: 16px">
+<section id="content">
+  <div class="content-wrap py-0">
+    <div id="section-about" class="center page-section">
+      <div class="container clearfix">
+        <h2 class="mx-auto bottommargin font-body" style="max-width: 700px; font-size: 40px">
+          About
+        </h2>
+
+        <p class="lead mx-auto bottommargin" style="max-width: 800px">
+          Ford Foundation reduce child mortality fight against oppression
+          refugee disruption pursue these aspirations effect. Free-speech Nelson
+          Mandela change liberal; challenges of our times sustainability
+          institutions.
+        </p>
+
+        <!-- <p class="bottommargin" style="font-size: 16px">
                 <a
                   href="#"
                   data-scrollto="#section-services"
@@ -349,117 +195,127 @@
                   >Learn more <i class="icon-angle-right"></i
                 ></a>
               </p> -->
-      
-              <div class="clear"></div>
-      
-      
-      
-      
-      
-           
+
+        <div class="clear"></div>
+
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="fancy-title title-center title-border topmargin">
+      <h3>Feeds</h3>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+      <div id="oc-posts" class="owl-carousel posts-carousel carousel-widget posts-md owl-loaded owl-drag col-9"
+        data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
+
+        <div class="oc-item col-3">
+          <div class="entry">
+            <div class="entry-image">
+              <a href="../../assets/17.jpg" data-lightbox="image"><img src="../../assets/17.jpg"
+                  alt="Standard Post with Image"></a>
+            </div>
+            <div class="entry-title title-xs nott">
+              <h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
+            </div>
+            <div class="entry-meta">
+
+            </div>
+            <div class="entry-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.
+              </p>
             </div>
           </div>
-      
-          <div class="fancy-title title-center title-border topmargin">
-              <h3>Feeds</h3>
-          </div>
-      
-        <div style="display: flex; justify-content: center;">
-          <div id="oc-posts" class="owl-carousel posts-carousel carousel-widget posts-md owl-loaded owl-drag col-9" data-pagi="false" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-lg="4">
-      
-            <div class="oc-item col-3">
-              <div class="entry">
-                <div class="entry-image">
-                  <a href="../../assets/17.jpg" data-lightbox="image"><img src="../../assets/17.jpg" alt="Standard Post with Image"></a>
-                </div>
-                <div class="entry-title title-xs nott">
-                  <h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
-                </div>
-                <div class="entry-meta">
-                  
-                </div>
-                <div class="entry-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
-                </div>
-              </div>
-            </div>
-            <div class="oc-item col-3">
-              <div class="entry">
-                <div class="entry-image">
-                  <a href="../../assets/17.jpg" data-lightbox="image"><img src="../../assets/17.jpg" alt="Standard Post with Image"></a>
-                </div>
-                <div class="entry-title title-xs nott">
-                  <h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
-                </div>
-                <div class="entry-meta">
-                  
-                </div>
-                <div class="entry-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
-                </div>
-              </div>
-            </div>
-        
-            <div class="oc-item col-3">
-              <div class="entry">
-                <div class="entry-image">
-                  <a href="../../assets/17.jpg" data-lightbox="image"><img src="../../assets/17.jpg" alt="Standard Post with Image"></a>
-                </div>
-                <div class="entry-title title-xs nott">
-                  <h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
-                </div>
-                <div class="entry-meta">
-                  
-                </div>
-                <div class="entry-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
-                </div>
-              </div>
-            </div>
-        
-            <div class="oc-item col-3">
-              <div class="entry">
-                <div class="entry-image">
-                  <a href="../../assets/17.jpg" data-lightbox="image"><img src="../../assets/17.jpg" alt="Standard Post with Image"></a>
-                </div>
-                <div class="entry-title title-xs nott">
-                  <h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
-                </div>
-                <div class="entry-meta">
-                  
-                </div>
-                <div class="entry-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
-                </div>
-              </div>
-            </div>
-        
-            <div class="oc-item col-3">
-              <div class="entry">
-                <div class="entry-image">
-                  <a href="../../assets/17.jpg" data-lightbox="image"><img src="../../assets/17.jpg" alt="Standard Post with Image"></a>
-                </div>
-                <div class="entry-title title-xs nott">
-                  <h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
-                </div>
-                <div class="entry-meta">
-                  
-                </div>
-                <div class="entry-content">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.</p>
-                </div>
-              </div>
-            </div>
-           
-          </div>
-        
         </div>
-      
-      
-      
+        <div class="oc-item col-3">
+          <div class="entry">
+            <div class="entry-image">
+              <a href="../../assets/17.jpg" data-lightbox="image"><img src="../../assets/17.jpg"
+                  alt="Standard Post with Image"></a>
+            </div>
+            <div class="entry-title title-xs nott">
+              <h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
+            </div>
+            <div class="entry-meta">
+
+            </div>
+            <div class="entry-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.
+              </p>
+            </div>
+          </div>
         </div>
-      
-       
-      </section>
-      <!-- #content end -->
-      
+
+        <div class="oc-item col-3">
+          <div class="entry">
+            <div class="entry-image">
+              <a href="../../assets/17.jpg" data-lightbox="image"><img src="../../assets/17.jpg"
+                  alt="Standard Post with Image"></a>
+            </div>
+            <div class="entry-title title-xs nott">
+              <h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
+            </div>
+            <div class="entry-meta">
+
+            </div>
+            <div class="entry-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="oc-item col-3">
+          <div class="entry">
+            <div class="entry-image">
+              <a href="../../assets/17.jpg" data-lightbox="image"><img src="../../assets/17.jpg"
+                  alt="Standard Post with Image"></a>
+            </div>
+            <div class="entry-title title-xs nott">
+              <h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
+            </div>
+            <div class="entry-meta">
+
+            </div>
+            <div class="entry-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="oc-item col-3">
+          <div class="entry">
+            <div class="entry-image">
+              <a href="../../assets/17.jpg" data-lightbox="image"><img src="../../assets/17.jpg"
+                  alt="Standard Post with Image"></a>
+            </div>
+            <div class="entry-title title-xs nott">
+              <h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h3>
+            </div>
+            <div class="entry-meta">
+
+            </div>
+            <div class="entry-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+</section>
+<!-- #content end -->
