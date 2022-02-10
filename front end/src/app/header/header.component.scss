@@ -375,7 +375,7 @@ img { max-width: 100%; }
 	Basic Layout Styles
 -----------------------------------------------------------------*/
 
-ul { margin-bottom: 30px; }
+// ul { margin-bottom: 30px; }
 
 
 
@@ -384,6 +384,10 @@ ul { margin-bottom: 30px; }
 	position: relative;
 	background-color: #FFF;
 	border-bottom: 1px solid #F5F5F5;
+	height: 90px;
+}
+#header-wrap{
+	width: 100vw;
 }
 
 #header-wrap {

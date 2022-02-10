@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FianceservService } from 'src/app/fianceserv.service';
+import { AmbassadeurService } from 'src/app/service/ambassadeur.service';
 import { ParticipantService } from 'src/app/service/participant.service';
 import { Participant } from 'src/participant';
 
@@ -15,18 +16,30 @@ export class StatfinanceComponent implements OnInit {
   gouvernerat!:string;
   govParticepant:any[]=[];
   facList:any[]=[]
-  constructor(private participantService : ParticipantService ,private serv:FianceservService) { }
+  nbpay!:number
+  nbAmbassadeur:any
+  constructor(private ambassadeurService : AmbassadeurService,private participantService : ParticipantService ,private serv:FianceservService) { }
   ngOnInit(): void {
     this.participantService.getParticipants().subscribe((participant:Participant[])=>{
       console.log(participant)
       this.ParticipantList=participant
-      
+      this.govParticepant=participant
+      this.whoPay(participant)
+    })
+
+    this.ambassadeurService.getAmbassadeurs().subscribe((ambassadeur:any[])=>{
+     this.nbAmbassadeur=ambassadeur.length
  
     })
+
   }
   onChangeofOptions(newGov:any) {
    this.gouvernerat=newGov;
-    this.govParticepant.filter(p=> p.governorate==newGov )
+    console.log(newGov)
+    console.log(this.ParticipantList)
+    this.govParticepant=this.ParticipantList.filter(p=> p.governorate==newGov )
+
+    console.log(this.govParticepant)
     this.facList=this.govParticepant.map((p,pos)=>{
 
       return this.govParticepant.indexOf(p)==pos
@@ -37,6 +50,9 @@ export class StatfinanceComponent implements OnInit {
       //     return [...removed, item];
       //   }, []);
     })
+
+    this.whoPay(this.govParticepant)
+    
 
 }
 
@@ -51,7 +67,7 @@ whoPay(ParticipantList:any){
     if(entry.pay==true) n++;
 }
 
-return n
+  this.nbpay=n;
 
 }
 

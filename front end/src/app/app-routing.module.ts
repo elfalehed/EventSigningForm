@@ -11,9 +11,9 @@ import { AuthGardService } from './service/auth-gard.service';
 const routes: Routes = [
   // { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `first-component`
   { path: '', component: HomeComponent},
-  { path: 'ambassadeurs', component: AmbassadeursComponent },
+  { path: 'ambassadeurs',canActivate:[AuthGardService], component: AmbassadeursComponent },
   { path: 'ambassadeurs-dash', canActivate:[AuthGardService],component: AmbassadeurDashComponent },
-  { path: 'finance-dash',canActivate:[AuthGardService], component: DashbordAdminComponent },
+  { path: 'finance-dash', component: DashbordAdminComponent },
   { path: 'Admin-dash',canActivate:[AuthGardService],component: DashbordItComponent },
   { path: 'amb', outlet:"dashbord",component: AddAmbassadeurComponent},
   { path: 'login', component: LoginComponent},

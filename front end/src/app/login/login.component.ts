@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
     console.log("azerty",this.loginform.value)
      this.authserv.login(this.loginform.value).subscribe(user=>{console.log("userfron back",user.user.role)
       this.authserv.saveToken(user.token)
+      console.log("waa 7ouma")
       if(user.user.role==="admin"){
         this.router.navigate(['/Admin-dash'])
       } 
@@ -33,6 +34,9 @@ export class LoginComponent implements OnInit {
       }
       if(user.user.role==="Financier"){
         this.router.navigate(['/finance-dash'])
+      }
+      if(user.user.role==="Participant"){
+        this.router.navigate(['/ambassadeurs'])
       }
       else{
         console.log("aaaaaaaaaaa")

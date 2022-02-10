@@ -89,6 +89,11 @@ onSubmit(){
      }
    this.addParticipan(newParticipant)
    console.log(this.participants)
+
+
+
+  this.participantform.reset();
+
   }
 else {
   alert("not")

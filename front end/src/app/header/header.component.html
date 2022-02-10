@@ -3,25 +3,32 @@
 
 
 
+<div class="head"> 
 
+<div class="container">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
           <div id="logo">
             <a
-              [routerLink]="['/']"
+              href="index.html"
               class="standard-logo"
               data-dark-logo="../assets/area01-logo.png"
               ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
             /></a>
-            
+            <a
+              href="index.html"
+              class="retina-logo"
+              data-dark-logo="one-page/images/canvasone-dark@2x.png"
+              ><img src="../assets/area01-dark-logo-modif.png" alt="Canvas Logo"
+            /></a>
           </div>
           <!-- <a class="navbar-brand" href="#">Navbar</a> --> 
 
            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse" style="flex-grow: inherit;" id="navbarNav">
             <ul class="navbar-nav">
        
               <li class="menu-item">
@@ -29,11 +36,11 @@
                   ><div>Home</div></a
                 >
               </li>
-              <li class="menu-item">
+              <!-- <li class="menu-item">
                 <a [routerLink]="['ambassadeurs']" class="menu-link" data-href="#section-about"
                   ><div>ambassadeurs</div></a
                 >
-              </li>
+              </li> -->
 
               <li class="menu-item" *ngIf="this.authService.isloggedIn == false" >
                 <a [routerLink]="['login']" class="menu-link" data-href="#section-about"
@@ -49,3 +56,5 @@
           </div>
         </div>
       </nav>
+    </div>      
+  </div>

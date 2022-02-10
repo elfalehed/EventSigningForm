@@ -47,7 +47,13 @@ export class AddAmbassadeurComponent implements OnInit {
 
 
 addAmbassadeur(ambassadeur:Ambassadeur){
-  this.ambassadeurService.addAmbassadeur(ambassadeur).subscribe((ambassadeur:Ambassadeur)=>(this.AmbassadeurList.push(ambassadeur)))
+  this.ambassadeurService.addAmbassadeur(ambassadeur).subscribe((ambassadeur:any)=> {
+    console.log(ambassadeur.user)
+    this.AmbassadeurList.push(ambassadeur.user)
+  }
+   
+    
+    )
  
 
  }
@@ -72,6 +78,8 @@ if( this.ambassadeurform.valid){
    }
  this.addAmbassadeur(newAmbassadeur)
  console.log(this.AmbassadeurList)
+
+ this.ambassadeurform.reset();
 }
 else {
 alert("not")

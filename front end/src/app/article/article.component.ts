@@ -30,8 +30,11 @@ export class ArticleComponent implements OnInit {
   ) {}
 post:any
   ngOnInit(): void {
+    
     this.route.paramMap.subscribe((params) => {
       this.postLinkId = params.get("id")||"";
+      console.log(params.get("id"))
+      console.log(this.postLinkId)
 
     });
 

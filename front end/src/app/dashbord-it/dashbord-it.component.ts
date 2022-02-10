@@ -53,6 +53,8 @@ export class DashbordItComponent implements OnInit {
        }
      this.addFinancier(newFinancier)
      console.log(this.FinancierList)
+
+     this.financierform.reset();
     }
     else {
     alert("not")
@@ -61,7 +63,7 @@ export class DashbordItComponent implements OnInit {
   }
 
   addFinancier(financier:Financier){
-    this.financierService.addFinancier(financier).subscribe((financier:Financier)=>(this.FinancierList.push(financier)))
+    this.financierService.addFinancier(financier).subscribe((financier:any)=>(this.FinancierList.push(financier.user)))
    
   
    }
