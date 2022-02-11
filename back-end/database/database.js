@@ -19,7 +19,7 @@ const DATABASE =async () => {
             console.log('connected to db!!')
             let admin = await user.findOne({
                 role: 'admin',
-                mail: 'younesmanita975@gmail.com',
+                mail: 'admin@area.com',
                 cin:"134256869"
             });
             if (!admin) {
@@ -27,11 +27,11 @@ const DATABASE =async () => {
                 const salt = await bcrypt.genSalt(10);
                 const hashed = await bcrypt.hash(password, salt);
                 let new_user = new user({
-                FirstName:'younes',
-                  lastname:'manita',
-                    mail:'younesmanita975@gmail.com',
+                FirstName:'admin',
+                  lastname:'admin',
+                    mail:'admin@area.com',
                     password:hashed,
-                    Phone:'29787582',
+                    PhoneNumber:'29787582',
                     cin:"134256869",
                    gender:"Male",
                     role: 'admin',

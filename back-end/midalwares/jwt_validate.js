@@ -7,8 +7,8 @@ module.exports = function (req,res,next){
     if(!authHeader) return res.status(401).send('Access Denied');
     try {
     jwt.verify(authHeader, TOKEN_SECRET,(err,user)=>{
-    if(err) return res.sendStatus(403)
-     req.user = user;
+if(err) return res.sendStatus(403)
+req.user = user;
         next();
         });
         

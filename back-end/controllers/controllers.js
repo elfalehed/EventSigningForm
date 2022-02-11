@@ -3,6 +3,7 @@ var bcrypt = require('bcryptjs');
 const post= require("../models/Post ")
 const jwt = require("jsonwebtoken");
 const user=require("../models/user");
+const TOKEN_SECRET = 'sqldklfqlqs545';
 
   exports.inscrit_participant= async(req,res)=>{
       const{cin,
@@ -11,10 +12,10 @@ const user=require("../models/user");
         Phone,
         Gender,
         mail,
-       
+        password,
         governorate,
         university,
-                    
+        psw,          
         DateOfBirth,
         pay}=req.body
       try {
@@ -25,7 +26,7 @@ const user=require("../models/user");
             Phone,
             Gender,
             mail,
-            password:null,
+            password,
             governorate,
             university,
             DateOfBirth,
@@ -36,14 +37,19 @@ const user=require("../models/user");
            const searchUser = await user.findOne({
             mail
           });
+          
           if (searchUser) {
             return res.status(500).send({
-              msg: "compte déja existe"
+              msg: "compte déja existe",
+              searchUser
             });
           }
       
       
-          // new_user.password = hashedPassword;
+          const salt = 10;
+       const gensalt = await bcrypt.genSalt(salt);
+       const hashedPassword = await bcrypt.hash(psw, gensalt);
+          new_user.password = hashedPassword;
       
       
           let result = await new_user.save();
@@ -62,11 +68,11 @@ const user=require("../models/user");
   }  
 
   exports.login = async (req, res) => {
+    // console.log(req.body)
     let exist = await user.findOne({
       mail: req.body.mail
     })
-    console.log("aaaaa",req.body.mail);
-    console.log(exist);
+    // console.log(exist);
     try {
       if (!exist) {
         return res.status(400).json({
@@ -75,15 +81,14 @@ const user=require("../models/user");
           },
         });
       }
-      console.log(req.body.mail);
-      console.log(req.body.password);
-      console.log(exist.password)
+        
+  
       const validPass = await bcrypt.compare(req.body.password, exist.password);
-      console.log(validPass);
+     
       if (!validPass) {
         return res.status(400).json({
           message: {
-            error: " Password is incorrect",
+            error: "Password is incorrect",
           },
         });
       }
@@ -92,13 +97,15 @@ const user=require("../models/user");
         type: exist.role
       };
   
-      const token = jwt.sign(payload, process.env.secretOrkey);
-  
+      const token = jwt.sign(payload, TOKEN_SECRET);
+      
       delete exist.password;
+      // fil exist mathamach chomp ismou token 
       exist.token = token;
-      res.status(200).json({
+      console.log(exist.password);
+      res.status(200).send({
         user: exist,
-        token:token,
+        token : token
       })
     } catch (error) {
       console.log(error)
@@ -243,7 +250,7 @@ const user=require("../models/user");
 
 exports.affiche_toususers = async (req, res) => {
     let users = await user.find({
-        role:"Financier", role:"Ambassadeur",role:"Participant"
+        role:"Financier", role:" Ambassadeur",role:"Participant"
     });
     try {
   
@@ -251,7 +258,7 @@ exports.affiche_toususers = async (req, res) => {
   
     } catch (error) {
       console.log(error)
-      res.status(400).send("error"); 
+      res.status(400).send("error");
     }
   
   
@@ -272,7 +279,8 @@ exports.affiche_toususers = async (req, res) => {
   
   }
   exports.affiche_ambassadeur = async (req, res) => {
-    let users = await user.find({
+    let users = await user.find(
+      {
         role:"Ambassadeur"
     });
     try {
