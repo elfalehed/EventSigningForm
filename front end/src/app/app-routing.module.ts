@@ -8,6 +8,9 @@ import { DashbordItComponent } from './dashbord-it/dashbord-it.component';
 import { AddAmbassadeurComponent } from './dashbord-it/add-ambassadeur/add-ambassadeur.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGardService } from './service/auth-gard.service';
+import {NewsComponent} from "./news/news.component"
+
+
 const routes: Routes = [
   // { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to `first-component`
   { path: '', component: HomeComponent},
@@ -17,6 +20,7 @@ const routes: Routes = [
   { path: 'Admin-dash',canActivate:[AuthGardService],component: DashbordItComponent },
   { path: 'amb', outlet:"dashbord",component: AddAmbassadeurComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'news', component: NewsComponent},
   { path: 'home', component: HomeComponent },
 ];
 

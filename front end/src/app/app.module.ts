@@ -21,6 +21,7 @@ import { AddAmbassadeurComponent } from './dashbord-it/add-ambassadeur/add-ambas
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { StatfinanceComponent } from './dashbord-admin/statfinance/statfinance.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { StatfinanceComponent } from './dashbord-admin/statfinance/statfinance.c
     AddAmbassadeurComponent,
     LoginComponent,
     FooterComponent,
-    StatfinanceComponent
+    StatfinanceComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
