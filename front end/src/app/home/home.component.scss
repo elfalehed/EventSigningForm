@@ -695,7 +695,7 @@ form { margin-bottom: 30px; }
 
 .leftmargin-sm { margin-left: 2rem !important; }
 
-.col-padding { padding: 4rem; }
+.col-padding { padding: 4rem; height: 100%; }
 
 .center { text-align: center !important; }
 
@@ -786,6 +786,7 @@ form { margin-bottom: 30px; }
 
 [class*="col-"]:not([class*="sticky-"]):not([class*="position-"]) {
 	position: relative;
+
 }
 
 
@@ -1323,7 +1324,7 @@ only screen and (                min-resolution: 2dppx) {
 .slider-element {
 	position: relative;
 	width: 100%;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 .slider-parallax { position: relative; }
@@ -1334,8 +1335,8 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .slider-inner {
-	position: absolute;
-	overflow: hidden;
+	// position: absolute;
+	// overflow: hidden;
 	opacity: 1;
 	visibility: visible;
 	width: 100%;
@@ -2517,7 +2518,7 @@ input[type=checkbox]:not(:checked) + label.error { display: block !important; }
 	height: 100%;
 	background-color: #FFF;
 	opacity: 0.7;
-	z-index: -1;
+	// z-index: -1;
 }
 
 
