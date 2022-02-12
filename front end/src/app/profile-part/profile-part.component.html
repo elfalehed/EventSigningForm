@@ -20,35 +20,31 @@
                     <form id="slider-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
                         <div class="col-6 form-grou">
                             <label> Type Partcipant</label>
-                            <select class="form-select required">
+                            <select class="form-select required" (change)="onTypeChange($event)">
                                 <option>-- Select One --</option>
                                 <option value="visteur">visteur</option>
                                 <option value="hacateur">hacateur</option>
                             </select>
-                            <div class="col-6 form-group">
+                            
+                            <div class="col-6 form-group" *ngIf="type==='hacateur'">
+                                <label>Titre:</label>
+                                <input class="form-control required" placeholder="Titre" (change)="onFieldChange($event, 'titre')" />
+                            </div>
+
+                            <div class="col-6 form-group" *ngIf="type==='hacateur'">
                                 <label>cin for binome 1:</label>
-                                <input class="form-control required" placeholder="Enter Numero Cin" />
+                                <input class="form-control required" placeholder="Enter Numero Cin" (change)="onFieldChange($event, 'cin1')" />
                             </div>
-                            <div class="col-6 form-group">
+                            <div class="col-6 form-group" *ngIf="type==='hacateur'">
                                 <label>cin for binome 2:</label>
-                                <input class="form-control required" placeholder="Enter Numero Cin" />
-                            </div>
-                            <div class="col-6 form-group">
-                                <label>cin for binome 3:</label>
-                                <input class="form-control required" placeholder="Enter Numero Cin" />
-                            </div>
-                            <div class="col-6 form-group">
-                                <label>cin for binome 4:</label>
-                                <input class="form-control required" placeholder="Enter Numero Cin" />
+                                <input class="form-control required" placeholder="Enter Numero Cin" (change)="onFieldChange($event, 'cin2')"/>
                             </div>
                         </div>
                         <div class="col-12">
-                            <button type="submit" name="event-registration-submit" class="btn btn-secondary"
-                               >
+                            <button type="submit" name="event-registration-submit" class="btn btn-secondary" (click)="submit()">
                                 Register
                             </button>
                         </div>
-
                     </form>
                 </div>
 
