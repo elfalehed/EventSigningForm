@@ -377,6 +377,10 @@ img { max-width: 100%; }
 
 // ul { margin-bottom: 30px; }
 
+.head{
+	// background-image: url(../../assets/f2153a265c7050550ec7e503b509236e.jpg);
+	background-color :#272525;
+}
 
 
 
@@ -629,7 +633,7 @@ only screen and (                min-resolution: 2dppx) {
 	display: block;
 	line-height: 22px;
 	padding: 14px 5px;
-	color: #444;
+	color: #ed1b76;
 	font-weight: 700;
 	font-size: 0.8125rem;
 	letter-spacing: 1px;
@@ -716,7 +720,7 @@ only screen and (                min-resolution: 2dppx) {
 
 .nav-solid .flex-prev:not(:hover) i,
 .nav-solid .flex-next:not(:hover) i {
-	color: #444;
+	color: white;
 	text-shadow: none;
 }
 

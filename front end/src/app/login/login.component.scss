@@ -5,10 +5,14 @@
 //     height: 90vh;
 // }
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+
 *{
   padding: 0; margin: 0;
   box-sizing: border-box;
-  font-family: 'Acme', sans-serif;
+  font-family: 'Open Sans', sans-serif !important;
   user-select: none;
 }
 .content{
@@ -17,7 +21,10 @@
   align-items: center;
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(320deg, #c7d5d6, #9bc3c2, #f7ada6);
+  background: url(../../assets/cccc.gif) ;
+  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
 }
 .box{
   width: 300px;
@@ -27,13 +34,17 @@
   justify-content: space-evenly;
   align-items: center;
   z-index: 100;
-  background-color: rgba(0,0,0, 0.3);
-  box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+
+  background: rgb(240,170,202);
+  background: linear-gradient(90deg, rgba(240,170,202,1) 0%, rgba(237,27,118,0.49933476808692223) 98%);
+
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
   border-radius: 20px;
 }
 h1{
   font-size: 45px;
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  color:#529c9b !important;
 }
 img{
   width: 30px; height: 30px;
@@ -44,19 +55,23 @@ img{
   height: 40px;
   display: flex;
   align-items: center;
-  border: 1px solid black;
-  border-radius: 1000px;
+  border:3px solid white;
+    border-radius: 1000px;
   padding: 15px;
+  margin-bottom:5px;
 }
 input[type="email"], input[type="password"]{
   width: 210px; height: 40px;
   background-color: transparent;
   outline: none; border: none;
+  
+  
 }
 input[type="email"]::placeholder, input[type="password"]::placeholder{
-  color: black;
+  color:white;
   font-size: 15px;
 }
+
 .remember{
   width: 250px;
   display: flex;
@@ -67,15 +82,16 @@ a{
   color: #fd9101;
 }
 .login{
-  background-color: black;
+  background-color: #529c9b;
   color: white;
   font-weight: bolder;
-  padding: 20px;
-  border: none;
   margin-top: 30px;
   width: 250px;
   height: 40px;
   font-size: 15px;
   cursor: pointer;
-  border: 2px solid black;
+  border-radius:15px;
+  border:3px solid white;
+  // padding:3px;
+  // border: 2px solid black;
 }

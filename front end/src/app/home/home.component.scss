@@ -1,5 +1,11 @@
 // #slider-subscribe-form { width: 125%; }
 
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+// #slider{
+// 	border: 5px solid black;
+// }
 /* ----------------------------------------------------------------
 	CSS Specific to the One Page Module
 
@@ -11,6 +17,13 @@
 
 /* Custom Header Size
 -----------------------------------------------------------------*/
+
+.all{
+	// background-image: url(../../assets/f2153a265c7050550ec7e503b509236e.jpg);
+
+	background-color :#272525;
+}
+
 
 .header-size-custom #logo img {
 	height: 70px;
@@ -629,11 +642,18 @@ img { max-width: 100%; }
 h1,
 h2,
 h3 {
-	color: #444;
+	
+	color: #ed1b76;
 	font-weight: 600;
 	line-height: 1.5;
 	margin: 0 0 30px 0;
-	font-family: 'Poppins', sans-serif;
+	
+	font-family: 'Open Sans', sans-serif !important;
+	// font-family: 'Poppins', sans-serif;
+}
+
+.btn-color{
+	background-color:#ed1b76;
 }
 
 h1 { font-size: 36px; }
@@ -1114,8 +1134,8 @@ only screen and (                min-resolution: 2dppx) {
 	display: block;
 	line-height: 22px;
 	padding: 14px 5px;
-	color: #444;
-	font-weight: 700;
+	color: #529c9b;
+		font-weight: 700;
 	font-size: 0.8125rem;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -1394,8 +1414,8 @@ body:not(.stretched) .slider-parallax .slider-inner { left: auto; }
 
 .nav-solid .flex-prev:not(:hover) i,
 .nav-solid .flex-next:not(:hover) i {
-	color: #444;
-	text-shadow: none;
+	color: #529c9b;
+		text-shadow: none;
 }
 
 
@@ -1462,6 +1482,18 @@ body:not(.stretched) .slider-parallax .slider-inner { left: auto; }
 	position: relative;
 	padding: 80px 0;
 	overflow: hidden;
+	// background-image: url(../../assets/f2153a265c7050550ec7e503b509236e.jpg);
+	background-color :white;
+	border : 10px solid #272525;
+	// border-bottom: 0;
+	// border : 10px solid #ed1b76;
+	// background-color: #ed1b76 ;
+	// color: white;
+
+}
+
+.content-wrap h2 {
+	color: #ed1b76 ;
 }
 
 #content .container { position: relative; }
@@ -2247,8 +2279,8 @@ label {
 	font-family: 'Poppins', sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: #555;
-	margin-bottom: 5px;
+	color: #529c9b;
+		margin-bottom: 5px;
 	cursor: pointer;
 }
 
@@ -2747,3 +2779,158 @@ input[type=checkbox]:not(:checked) + label.error { display: block !important; }
 	gap : 10px;
 }
 
+
+
+
+/*--------------------------------------------------------------
+# Schedule Section
+--------------------------------------------------------------*/
+#schedule {
+	padding: 60px 0 60px 0;
+	// background-image: url(../../assets/f2153a265c7050550ec7e503b509236e.jpg);
+	background-color :#272525;
+	// border : 10px solid #ed1b76;
+
+	color:white ;
+  }
+  #schedule .nav-tabs {
+	text-align: center;
+	margin: auto;
+	display: block;
+	border-bottom: 0;
+	margin-bottom: 30px;
+  }
+  #schedule .nav-tabs li {
+	display: inline-block;
+	margin-bottom: 0;
+  }
+  #schedule .nav-tabs a {
+	border: none;
+	border-radius: 50px;
+	font-weight: 600;
+	// background-color: #0e1b4d;
+	color: #fff;
+	padding: 10px 100px;
+  }
+  @media (max-width: 991px) {
+	#schedule .nav-tabs a {
+	  padding: 8px 60px;
+	}
+  }
+  @media (max-width: 767px) {
+	#schedule .nav-tabs a {
+	  padding: 8px 50px;
+	}
+  }
+  @media (max-width: 480px) {
+	#schedule .nav-tabs a {
+	  padding: 8px 30px;
+	}
+  }
+  #schedule .nav-tabs a.active {
+	background-color: #ed1b76;
+	color: #fff;
+  }
+  #schedule .sub-heading {
+	text-align: center;
+	font-size: 18px;
+	font-style: italic;
+	margin: 0 auto 30px auto;
+  }
+  @media (min-width: 991px) {
+	#schedule .sub-heading {
+	  width: 75%;
+	}
+  }
+  #schedule .tab-pane {
+	transition: ease-in-out 0.2s;
+  }
+  #schedule .schedule-item {
+	border-bottom: 1px solid #cad4f6;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	transition: background-color ease-in-out 0.3s;
+  }
+  #schedule .schedule-item:hover {
+	// background-color: #fff;
+  }
+  #schedule .schedule-item time {
+	padding-bottom: 5px;
+	display: inline-block;
+  }
+  #schedule .schedule-item .speaker {
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	border-radius: 50%;
+	float: left;
+	margin: 0 10px 10px 0;
+  }
+  #schedule .schedule-item .speaker img {
+	height: 100%;
+	transform: translateX(-50%);
+	margin-left: 50%;
+	transition: all ease-in-out 0.3s;
+  }
+  #schedule .schedule-item h4 {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 5px;
+  }
+  #schedule .schedule-item h4 span {
+	font-style: italic;
+	// color: #19328e;
+	font-weight: normal;
+	font-size: 16px;
+  }
+  #schedule .schedule-item p {
+	font-style: italic;
+	// color: #152b79;
+	margin-bottom: 0;
+  }
+
+  #schedule .section-header {
+	text-align: center;
+  }
+
+  #schedule time {
+	color : #ed1b76 ;
+  }
+
+  #schedule h3 {
+	color : #5e9c9b ;
+  }
+
+  /*--------------------------------------------------------------
+# Sponsors Section
+--------------------------------------------------------------*/
+#supporters {
+	padding: 60px 0;
+  }
+  #supporters .supporters-wrap {
+	border-top: 1px solid #e0e5fa;
+	border-left: 1px solid #e0e5fa;
+	margin-bottom: 30px;
+  }
+  #supporters .supporter-logo {
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-right: 1px solid #e0e5fa;
+	border-bottom: 1px solid #e0e5fa;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.5);
+	height: 160px;
+  }
+  #supporters .supporter-logo:hover img {
+	transform: scale(1.2);
+  }
+  #supporters img {
+	transition: all 0.4s ease-in-out;
+  }
+
+  #supporters h2 {
+	text-align: center;
+  }
+  

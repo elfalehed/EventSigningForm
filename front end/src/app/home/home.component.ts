@@ -28,6 +28,20 @@ export class HomeComponent implements OnInit {
       
     // );
     // console.log(this.options);
+
+// document.addEventListener("mouseleave", (event) => {  
+//   if (event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight)) {  
+//     alert('win mach i !!')
+//   }  
+
+//  if (event.clientY > 0 || event.clientX < 0 || (event.clientX < window.innerWidth || event.clientY < window.innerHeight)) {  
+//     alert('win mach')
+//   }  
+
+
+
+// });
+
     this.participantform =this.formBuilder.group({
       FirstName : ['',Validators.required],
       LastName : ['',Validators.required],
