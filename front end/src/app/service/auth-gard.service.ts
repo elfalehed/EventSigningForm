@@ -19,7 +19,7 @@ export class AuthGardService implements CanActivate {
     | boolean
     | UrlTree {
       
-    if (localStorage.getItem('isloggedIn') === "false" ) {
+    if (localStorage.getItem('isloggedIn') === "false"|| localStorage.getItem('isloggedIn') ===null ) {
       
       this.route.navigate(['/home']);
     }

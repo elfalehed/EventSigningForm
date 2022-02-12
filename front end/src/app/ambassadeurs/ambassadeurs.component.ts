@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import {AmbassadeurService} from "../service/ambassadeur.service"
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-ambassadeurs',
@@ -11,19 +12,23 @@ import {AmbassadeurService} from "../service/ambassadeur.service"
 })
 export class AmbassadeursComponent implements OnInit {
 
-  constructor(private ambassadeurService:AmbassadeurService) { }
+  constructor(private ambassadeurService:AmbassadeurService,private authService : AuthService) { }
 
   selected:boolean=false
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions!: Observable<string[]>;
   AmbassadeurList :any[]=[]
   Ambassadeur:any={}
-  ngOnInit() {
-    this.ambassadeurService.getAmbassadeurs().subscribe((ambassadeur)=>{
+  
+  ngOnInit() { 
+    if(localStorage.getItem('isloggedIn') === "false"|| localStorage.getItem('isloggedIn') ===null){
+      this.authService.isauth="false"
+      }else{
+        this.authService.isauth=localStorage.getItem('isloggedIn')
+      }
+    this.ambassadeurService.getAmbassadeursparville({governorate:"Kébili"}).subscribe((ambassadeur)=>{
       this.AmbassadeurList=ambassadeur
-
-      console.log(ambassadeur)
- 
+      console.log("ficomp",ambassadeur)
     })
   
   }

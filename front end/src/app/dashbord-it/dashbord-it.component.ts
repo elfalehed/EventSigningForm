@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup ,FormBuilder, Validators} from '@angular/forms';
 import {Financier} from "../../participant";
+import { AuthService } from '../service/auth.service';
 import {FinancierService} from "../service/financier.service"
 
 
@@ -14,9 +15,18 @@ export class DashbordItComponent implements OnInit {
   FinancierList : Financier[] =[]
   financierform!:FormGroup;
 
-  constructor(private financierService : FinancierService,private formBuilder: FormBuilder) { }
+  constructor(private financierService : FinancierService,private formBuilder: FormBuilder,private authService : AuthService) { }
 
   ngOnInit(): void {
+
+    if(localStorage.getItem('isloggedIn') === "false"|| localStorage.getItem('isloggedIn') ===null){
+      this.authService.isauth="false"
+      }else{
+       
+        this.authService.isauth=localStorage.getItem('isloggedIn')
+      }
+      
+    
 
     this.financierform =this.formBuilder.group({
       FirstName : ['',Validators.required],

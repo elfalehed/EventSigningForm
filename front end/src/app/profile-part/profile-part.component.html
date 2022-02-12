@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="main-body">
+        <!-- /Breadcrumb -->
+        <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <div class="mt-3">
+                                <p class="text-secondary mb-1">{{this.user.FirstName}}</p>
+                                <p class="text-muted font-size-sm"> {{this.user.governorate}}</p>
+                                <p class="text-muted font-size-sm">status:{{this.user.pay}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card mb-3">
+                    <form id="slider-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
+                        <div class="col-6 form-grou">
+                            <label> Type Partcipant</label>
+                            <select class="form-select required">
+                                <option>-- Select One --</option>
+                                <option value="visteur">visteur</option>
+                                <option value="hacateur">hacateur</option>
+                            </select>
+                            <div class="col-6 form-group">
+                                <label>cin for binome 1:</label>
+                                <input class="form-control required" placeholder="Enter Numero Cin" />
+                            </div>
+                            <div class="col-6 form-group">
+                                <label>cin for binome 2:</label>
+                                <input class="form-control required" placeholder="Enter Numero Cin" />
+                            </div>
+                            <div class="col-6 form-group">
+                                <label>cin for binome 3:</label>
+                                <input class="form-control required" placeholder="Enter Numero Cin" />
+                            </div>
+                            <div class="col-6 form-group">
+                                <label>cin for binome 4:</label>
+                                <input class="form-control required" placeholder="Enter Numero Cin" />
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" name="event-registration-submit" class="btn btn-secondary"
+                               >
+                                Register
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

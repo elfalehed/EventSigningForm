@@ -22,6 +22,7 @@ import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { StatfinanceComponent } from './dashbord-admin/statfinance/statfinance.component';
 import { NewsComponent } from './news/news.component';
+import { ProfilePartComponent } from './profile-part/profile-part.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { NewsComponent } from './news/news.component';
     LoginComponent,
     FooterComponent,
     StatfinanceComponent,
-    NewsComponent
+    NewsComponent,
+    ProfilePartComponent
   ],
   imports: [
     BrowserModule,

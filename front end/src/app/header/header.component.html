@@ -30,10 +30,9 @@
           </button>
           <div class="collapse navbar-collapse" style="flex-grow: inherit;" id="navbarNav">
             <ul class="navbar-nav">
-       
-              <li class="menu-item">
-                <a  class="menu-link" data-href="#wrapper" [routerLink]="['']"
-                  ><div>Home</div></a
+              <li class="menu-item" > 
+                <a [routerLink]="['Admin-dash']" class="menu-link" data-href="#section-about"
+                  ><div>dashbord</div></a
                 >
               </li>
 
@@ -49,12 +48,12 @@
                 >
               </li>
 
-              <li class="menu-item" *ngIf="this.authService.isloggedIn == false" >
+              <li class="menu-item" *ngIf="this.authService.isauth === 'false'" >
                 <a [routerLink]="['login']" class="menu-link" data-href="#section-about"
                   ><div>login</div></a
                 >
               </li>
-              <li class="menu-item" *ngIf="this.authService.isloggedIn == true">
+              <li class="menu-item" *ngIf="this.authService.isauth !== 'false' ">
                 <a (click)="logout()" style="cursor: pointer;" class="menu-link" data-href="#section-about"
                   ><div>logout</div></a
                 >

@@ -9,6 +9,7 @@ import { AddAmbassadeurComponent } from './dashbord-it/add-ambassadeur/add-ambas
 import { LoginComponent } from './login/login.component';
 import { AuthGardService } from './service/auth-gard.service';
 import {NewsComponent} from "./news/news.component"
+import { ProfilePartComponent } from './profile-part/profile-part.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'news', component: NewsComponent},
   { path: 'home', component: HomeComponent },
+  { path: 'profile',canActivate:[AuthGardService], component: ProfilePartComponent },
+  
 ];
 
 @NgModule({

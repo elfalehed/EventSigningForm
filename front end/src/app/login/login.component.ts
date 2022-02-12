@@ -36,12 +36,12 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/finance-dash'])
       }
       if(user.user.role==="Participant"){
-        this.router.navigate([''])
+        this.router.navigate(['/profile'])
       }
       else{
         console.log("aaaaaaaaaaa")
       }
-
+      
     }
      
     );

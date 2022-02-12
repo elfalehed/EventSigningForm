@@ -26,6 +26,16 @@ export class AmbassadeurService {
     console.log(this.http.get<Ambassadeur[]>(apiUrl))
     return this.http.get<Ambassadeur[]>(apiUrl);
   }
+  getAmbassadeursparville(governorate: any):Observable<Ambassadeur[]> {
+    const apiUrl = "http://localhost:3000/user/amb_ville"
+    // this.http.post<Ambassadeur[]>(apiUrl,governorate).subscribe((ambassadeur)=>{
+      
+    //   console.log("fiservice",ambassadeur)
+    // })
+    console.log("fiservice",governorate)
+    return this.http.post<any>(apiUrl,governorate);
+    
+  }
 
   getOneAmbassadeurs(id:number):Observable<Ambassadeur[]> {
     const apiUrl = "http://localhost:3000/user"

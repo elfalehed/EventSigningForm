@@ -11,6 +11,6 @@ export class AppComponent implements OnInit {
   constructor(public authService:AuthService){
   }
   ngOnInit(): void {
-    this.authService.isloggedIn
+    
   }
 }

@@ -42,7 +42,11 @@ export class ParticipantService {
       console.log("task",participant)
       // const body = { title: 'Angular PUT Request Example' };
       // const url=`${apiUrl}/${participant.id}`
-      return this.http.put<Participant>(apiUrl,participant)
-        
+      return this.http.put<Participant>(apiUrl,participant)  
+  }
+  getuser(id:any){
+    const apiUrl = "http://localhost:3000/user/afficher_seuluser";
+    console.log(this.http.get<Participant[]>(`${apiUrl}/${id}`))
+    return this.http.get<Participant[]>(`${apiUrl}/${id}`);
   }
 }
