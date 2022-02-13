@@ -22,17 +22,21 @@ const upload = multer({
 
 
 
-
-
+//Auth Routes :
+router.post("/register", userMidalware, controllers.register);
 router.post("/login", controllers.login);
+
+//Post Routes :
 router.post("/inscrit_participant", controllers.inscrit_participant);
 router.post("/ajouter_financier", adminMidalware, controllers.ajouter_financier);
 router.post("/ajouter_Ambassadeur", adminMidalware, controllers.ajouter_Ambassadeur);
 router.post("/ajout_post", adminMidalware, upload.any('image'), controllers.ajout_post);
 
+//Update Routes :
 router.put("/modifier_user/:id", adminMidalware, controllers.modifier_user);
 router.put("/modifier_post", adminMidalware, upload.any('image'), controllers.update_post);
 
+//Get/Display Routes :
 router.get("/afficher_users", adminMidalware, controllers.affiche_toususers);
 router.get("/afficher_participant", controllers.affiche_touparticipant);
 router.get("/afficher_ambassadeur", controllers.affiche_ambassadeur);
@@ -42,10 +46,8 @@ router.get("/afficher_uneposte/:id", controllers.affiche_unepost);
 router.get("/afficher_seuluser/:id", controllers.afficher_user);
 router.get("/afficher_seulpost/:link", controllers.affiche_postlink);
 
-router.post("/delete_user/:id", adminMidalware, controllers.deletuser);
-router.post("/delete_post", adminMidalware, controllers.deletepost);
-router.post("/register", userMidalware, controllers.register);
-
-
+//Delete Routes :
+router.delete("/delete_user/:id", adminMidalware, controllers.deletuser);
+router.delete("/delete_post", adminMidalware, controllers.deletepost);
 
 module.exports = router; 

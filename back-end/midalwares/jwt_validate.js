@@ -39,7 +39,70 @@ function adminMidalware(req, res, next) {
   }
 }
 
+function ambassadeurMidalware(req, res, next) {
+  console.log(req);
+  const authHeader = req.headers['authorization'];
+  if (!authHeader) return res.status(401).send('Access Denied');
+  try {
+    jwt.verify(authHeader, TOKEN_SECRET, (err, user) => {
+      if (err) return res.sendStatus(403)
+      if (user.type === "Ambassadeur") {
+        req.user = user;
+        next();
+      } else {
+        res.status(401).send('Not Ambassadeur: Access Denied');
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(401).send('Invalid Token');
+  }
+}
+
+function participantMidalware(req, res, next) {
+  console.log(req);
+  const authHeader = req.headers['authorization'];
+  if (!authHeader) return res.status(401).send('Access Denied');
+  try {
+    jwt.verify(authHeader, TOKEN_SECRET, (err, user) => {
+      if (err) return res.sendStatus(403)
+      if (user.type === "Participant") {
+        req.user = user;
+        next();
+      } else {
+        res.status(401).send('Not Participant: Access Denied');
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(401).send('Invalid Token');
+  }
+}
+
+function financierMidalware(req, res, next) {
+  console.log(req);
+  const authHeader = req.headers['authorization'];
+  if (!authHeader) return res.status(401).send('Access Denied');
+  try {
+    jwt.verify(authHeader, TOKEN_SECRET, (err, user) => {
+      if (err) return res.sendStatus(403)
+      if (user.type === "Financier") {
+        req.user = user;
+        next();
+      } else {
+        res.status(401).send('Not Financier: Access Denied');
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(401).send('Invalid Token');
+  }
+}
+
 module.exports = {
   userMidalware,
-  adminMidalware
+  adminMidalware,
+  ambassadeurMidalware,
+  participantMidalware,
+  financierMidalware
 }

@@ -23,8 +23,8 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Headers", " ,content-type");
   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
   
+  res.send("Error while setting header");
   next();
-  console.log(error)
 });
 PORT=3000
 app.listen(PORT,(err)=>

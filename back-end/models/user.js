@@ -53,7 +53,6 @@ const User=new schema({
     role:{
      type:String,
      enum:["admin","Financier","Ambassadeur","Participant"]
-
     },
   
 }
