@@ -25,7 +25,7 @@ function adminMidalware(req, res, next) {
   try {
     jwt.verify(authHeader, TOKEN_SECRET, (err, user) => {
       if (err) return res.sendStatus(403)
-      if (user.type === "admin") {
+      if (user.role === "admin") {
         req.user = user;
         next();
       } else {
@@ -46,7 +46,7 @@ function ambassadeurMidalware(req, res, next) {
   try {
     jwt.verify(authHeader, TOKEN_SECRET, (err, user) => {
       if (err) return res.sendStatus(403)
-      if (user.type === "Ambassadeur") {
+      if (user.role === "Ambassadeur") {
         req.user = user;
         next();
       } else {
@@ -66,7 +66,7 @@ function participantMidalware(req, res, next) {
   try {
     jwt.verify(authHeader, TOKEN_SECRET, (err, user) => {
       if (err) return res.sendStatus(403)
-      if (user.type === "Participant") {
+      if (user.role === "Participant") {
         req.user = user;
         next();
       } else {
@@ -86,7 +86,7 @@ function financierMidalware(req, res, next) {
   try {
     jwt.verify(authHeader, TOKEN_SECRET, (err, user) => {
       if (err) return res.sendStatus(403)
-      if (user.type === "Financier") {
+      if (user.role === "Financier") {
         req.user = user;
         next();
       } else {

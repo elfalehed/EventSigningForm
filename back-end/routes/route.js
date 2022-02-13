@@ -3,7 +3,7 @@ const router = express.Router();
 const controllers = require("../controllers/controllers");
 const validator = require("../midalwares/validator")
 const multer = require("multer");
-const { userMidalware, adminMidalware } = require("../midalwares/jwt_validate");
+const { userMidalware, adminMidalware,participantMidalware } = require("../midalwares/jwt_validate");
 
 const storage = multer.diskStorage({
 
@@ -28,6 +28,7 @@ router.post("/login", controllers.login);
 
 //Post Routes :
 router.post("/inscrit_participant", controllers.inscrit_participant);
+router.post("/selectionner_type_participant",participantMidalware,controllers.selectionner_type_participant)
 router.post("/ajouter_financier", adminMidalware, controllers.ajouter_financier);
 router.post("/ajouter_Ambassadeur", adminMidalware, controllers.ajouter_Ambassadeur);
 router.post("/ajout_post", adminMidalware, upload.any('image'), controllers.ajout_post);

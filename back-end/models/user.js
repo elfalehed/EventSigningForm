@@ -47,9 +47,11 @@ const User=new schema({
     },
     password:{
         type:String,
-       
     },
-   
+    type:{
+        type:String,
+        enum:["visiteur","challenger"]
+    },
     role:{
      type:String,
      enum:["admin","Financier","Ambassadeur","Participant"]

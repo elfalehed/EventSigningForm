@@ -5,6 +5,43 @@ const jwt = require("jsonwebtoken");
 const user = require("../models/user");
 const TOKEN_SECRET = 'sqldklfqlqs545';
 
+/*Selectionner le type de participant (visiteur OU challenger) ET
+affecteur le valeur dans l'attribute type (models/user.js)
+*/
+exports.selectionner_type_participant = async (req,res)=>{
+
+  checkUserExcite=false;
+
+  User.findOne({cin:req.body.cin}).then(response=>{
+    if (response){
+      checkUserExcite =true;
+    }
+    else{
+      res.send("Participant not found !")
+    }
+  }).catch(err=>{
+    console.log("Participant not found !",err);
+    res.status(500).send("Participant not found !",err);
+  });
+
+
+  if (checkUserExcite && 
+    (req.body.type.toLowerCase()== "visiteur" ||
+     req.body.type.toLowerCase() =="challenger"))
+    {
+    User.findOneAndUpdate({cin:req.body.cin},{type:req.body.type}).then(response=>{
+      if (response){
+        res.status(201).send("Update Participant Type successfully !")
+      }
+      res.status(400).send("Can not ppdate Participant Type !")
+    }).catch(err=>{
+      console.log("Error while updating type of participant",err);
+      res.status(500).send("Error while updating type of participant",err);
+    });
+  }
+
+}
+
 exports.inscrit_participant = async (req, res) => {
   const { cin,
     FirstName,
@@ -32,7 +69,6 @@ exports.inscrit_participant = async (req, res) => {
       DateOfBirth,
       pay,
       role: "Participant",
-
     })
     const searchUser = await user.findOne({
       mail
@@ -236,33 +272,19 @@ exports.ajouter_Ambassadeur = async (req, res) => {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 exports.affiche_toususers = async (req, res) => {
   let users = await user.find({
-    role: "Financier", role: " Ambassadeur", role: "Participant"
+    role: "Financier", role: "Ambassadeur", role: "Participant"
   });
   try {
-
     return res.status(200).send(users)
-
   } catch (error) {
     console.log(error)
     res.status(400).send("error");
   }
-
-
 }
+
+
 exports.affiche_financier = async (req, res) => {
   let users = await user.find({
     role: "Financier"
@@ -275,9 +297,9 @@ exports.affiche_financier = async (req, res) => {
     console.log(error)
     res.status(400).send("error");
   }
-
-
 }
+
+
 exports.affiche_ambassadeur = async (req, res) => {
   let users = await user.find(
     {
@@ -328,11 +350,7 @@ exports.afficher_user = async (req, res) => {
   let id = req.params.id;
   try {
 
-
     let User = await user.findById(id)
-
-
-
     res.status(200).send(User);
 
   } catch (error) {
@@ -537,6 +555,12 @@ exports.deletepost = async (req, res) => {
   }
 }
 
+//Singup controller:
+/*
+{
+  CIN
+}
+*/
 
 
 
@@ -546,7 +570,7 @@ exports.register = async (req, res) => {
     case 'visteur':
 
       break;
-    case 'hacateur':
+    case 'challenger':
       let result = {
         cin1: true,
         cin2: true
