@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    position: relative;
+    width: 25%;
+    max-width: 25%;
+    height: 50px;
+    max-height: 50px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+
+  .blog-list{
+    padding: 20px 40px;
+}

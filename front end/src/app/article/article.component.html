@@ -1,0 +1,25 @@
+<div class="blog-details-container">
+  <nav aria-label="breadcrumb ">
+    <ol class="breadcrumb mt-2 bg-white text-secondary">
+      <li class="breadcrumb-item"><a [routerLink]="['/blog']">Blog</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        {{ postLinkId }}
+      </li>
+    </ol>
+  </nav>
+  <div class="blog-details-image">
+    <img
+      align="center"
+      [src]="post.feature_image"
+      alt="cover_image"
+      style="width: 100%"
+    />
+  </div>
+  <div class="blog-details-title-date">
+    <h1 id="title">{{ post?.title }}</h1>
+    <h4 id="date">{{ post?.created_at | date }}</h4>
+  </div>
+  <div class="blog-details-content">
+    <p [innerHTML]="post?.content"></p>
+  </div>
+</div>

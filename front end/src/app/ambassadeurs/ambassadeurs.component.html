@@ -1,0 +1,136 @@
+<div class="col-padding">
+  <div class="heading-block border-bottom-0 leftmargin-sm">
+    <h1
+      class="nott fw-normal"
+      style="
+        line-height: 1.4;
+        font-size: 48px;
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+      "
+    >
+      Find your ambassadeur
+    </h1>
+    <!-- <span style="font-size:16px; top-margin: 20px;" class="fw-light">Deals, Coupon Codes &amp; Insider Tips to get the Best out of our Products &amp; Services.</span> -->
+  </div>
+  <div class="widget-subscribe-form-result"></div>
+  <form
+    id="slider-subscribe-form"
+    action="include/subscribe.php"
+    method="post"
+    class="mb-0"
+  >
+    <!-- <div class="input-group">
+        <input (change)="onchange($event)" formControlName="university" list="university" type="text" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control input-lg not-dark required email" placeholder="Enter your Email Address..">
+        <datalist id="university"  class="input-lg">
+          <option value="institut supérieur d'informatique de medenine">
+          <option value="institut supérieur d'informatique de Mahdia">
+          <option value="institut supérieur d'informatique de tunis ">
+          <option value="institut supérieur d'informatique gabes">
+      </datalist>
+        <button href="#" class="button bg-transparent" type="submit" style="color: #222; text-shadow: none;"><i class="icon-line-arrow-right" style="font-size: 24px; line-height: 40px"></i></button>
+      </div> -->
+
+    <div class="col-6 form-grou">
+      <label>governorate</label>
+      <select
+        formControlName="governorate"
+        class="form-select required"
+        name="event-registration-passes"
+        id="event-registration-passes"
+        (change)="onchange($event)"
+      >
+        <option value="">-- Select One --</option>
+        <option value="Ariana">Ariana</option>
+        <option value="Béja">Béja</option>
+        <option value="Ben Arous">Ben Arous</option>
+        <option value="Bizerte">Bizerte</option>
+        <option value="Gabès">Gabès</option>
+        <option value="Gafsa">Gafsa</option>
+        <option value="Jendouba">Jendouba</option>
+        <option value="Kairouan">Kairouan</option>
+        <option value="Kasserine">Kasserine</option>
+        <option value="Kébili">Kébili</option>
+        <option value="Kef">Kef</option>
+        <option value="Mahdia">Mahdia</option>
+        <option value="Manouba">Manouba</option>
+        <option value="Médenine">Médenine</option>
+        <option value="Monastir">Monastir</option>
+        <option value="Nabeul">Nabeul</option>
+        <option value="Sfax">Sfax</option>
+        <option value="Sidi Bouzid">Sidi Bouzid</option>
+        <option value="Siliana">Siliana</option>
+        <option value="Sousse">Sousse</option>
+        <option value="Tataouine">Tataouine</option>
+        <option value="Tozeur">Tozeur</option>
+        <option value="">Tunis</option>
+        <option value="Zaghouan">Zaghouan</option>
+        <option value="">-- Select One --</option>
+      </select>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="selected" class="p-16 bg-surface-secondary">
+  <div class="row" style="margin-bottom: 50px">
+    <div class="col-lg-4 mx-auto">
+      <!-- Component -->
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="d-flex justify-content-center">
+            <a href="#" class="avatar avatar-xl rounded-circle">
+              <img
+                class="avatar-image rounded-circle"
+                alt="..."
+                src="https://www.kindpng.com/picc/m/22-223941_transparent-avatar-png-male-avatar-icon-transparent-png.png"
+              />
+            </a>
+          </div>
+          <div class="text-center my-6">
+            <!-- Title -->
+            <a href="#" class="d-block h5 mb-0"
+              >{{ Ambassadeur.FirstName + " " + Ambassadeur.LastName }}
+            </a>
+            <!-- Subtitle -->
+            <span class="d-block text-sm text-muted"> Email : {{
+              Ambassadeur.mail
+            }}</span>
+
+            <span class="d-block text-sm text-muted"> Phone number : {{
+              Ambassadeur.Phone
+            }}</span>
+          </div>
+          <!-- Stats -->
+          <div class="social-menu">
+            <ul>
+              <li>
+                <a href="https://github.com/sanketbodke" target="blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/imsanketbodke/"
+                  target="blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/sanket-bodake-995b5b205/"
+                  target="blank"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://codepen.io/sanketbodke"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
