@@ -19,28 +19,94 @@ export class HomeComponent implements OnInit {
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions!: Observable<string[]>;
 
+  gov!:string;
+  arr=[
+    {
+      gov:"sfax",
+      fac:"Faculté des Sciences Economiques et de Gestion de Sfax",
+    },
+    {
+     gov:"sfax",
+     fac:"Faculté de Médecine de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Faculté de droit de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Supérieur des Arts et Métiers de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Supérieur d'Electronique et de Communication de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Supérieur de Gestion Industrielle de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut des Hautes Etudes Commerciales de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Faculté des Sciences de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Ecole Nationale d'Ingénieurs de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Ecole Supérieure de Commerce de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Supérieur d'Administration des Affaires de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Supérieur d'Informatique et de Multimédia de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Supérieur de Musique de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Préparatoire aux Etudes d'Ingénieurs de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Supérieur du Sport et de l'Education Physique de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Supérieur de Biotechnologies de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Faculté des Lettres et Sciences Humaines de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Zitouna de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Ecole Supérieure des Sciences et Techniques de la Santé de Sfax",
+   },
+   {
+     gov:"sfax",
+     fac:"Institut Supérieur des Sciences infirmières de Sfax",
+   },
+ ]
+
   constructor(private participantService : ParticipantService,private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    // this.filteredOptions = this.myControl.valueChanges.pipe(
-    //   startWith(''),
-    //   map(value => this._filter(value)),
-      
-    // );
-    // console.log(this.options);
-
-// document.addEventListener("mouseleave", (event) => {  
-//   if (event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight)) {  
-//     alert('win mach i !!')
-//   }  
-
-//  if (event.clientY > 0 || event.clientX < 0 || (event.clientX < window.innerWidth || event.clientY < window.innerHeight)) {  
-//     alert('win mach')
-//   }  
-
-
-
-// });
+  
 
     this.participantform =this.formBuilder.group({
       FirstName : ['',Validators.required],
@@ -70,10 +136,106 @@ export class HomeComponent implements OnInit {
     // })
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+  onChange(e:any){
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+    console.log(e.target.value)
+    this.gov=e.target.value
+  }
+
+  // private _filter(value: string): string[] {
+  //   const filterValue = value.toLowerCase();
+
+  //   return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  // }
+
+  filtredArray(gov:string){
+
+  let arr=[
+       {
+         gov:"sfax",
+         fac:"Faculté des Sciences Economiques et de Gestion de Sfax",
+       },
+       {
+        gov:"sfax",
+        fac:"Faculté de Médecine de Sfax",
+      },
+      {
+        gov:"Faculté de droit de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Supérieur des Arts et Métiers de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Supérieur d'Electronique et de Communication de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Supérieur de Gestion Industrielle de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut des Hautes Etudes Commerciales de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Faculté des Sciences de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Ecole Nationale d'Ingénieurs de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Ecole Supérieure de Commerce de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Supérieur d'Administration des Affaires de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Supérieur d'Informatique et de Multimédia de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Supérieur de Musique de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Préparatoire aux Etudes d'Ingénieurs de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Supérieur du Sport et de l'Education Physique de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Supérieur de Biotechnologies de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Faculté des Lettres et Sciences Humaines de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Zitouna de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Ecole Supérieure des Sciences et Techniques de la Santé de Sfax",
+      },
+      {
+        gov:"sfax",
+        fac:"Institut Supérieur des Sciences infirmières de Sfax",
+      },
+    ]
+
+    console.log(gov)
+    
+    return arr.filter(op => op.gov==gov);
+
   }
 
 

@@ -11,32 +11,7 @@ import {AmbassadeurService} from "../service/ambassadeur.service"
 })
 export class AmbassadeurDashComponent implements OnInit {
   ParticipantList : Participant[]=[
-    // {
-    // id:1  ,
-    // cin: "13467075",
-    // FirstName: "Fahmi",
-    // LastName: "Ben Z",
-    // mail: "fahmi@gmail.com",
-    // Gender: "Male",
-    // DateOfBirth: "14/08/95",
-    // Phone: 52002119,
-    // governorate: "Mednine",
-    // university: "Isimed",
-    // pay : true
-    // },
-    // {
-    //   id:2,
-    // cin: "13467070",
-    // FirstName: "amine",
-    // LastName: "bay",
-    // mail: "fahmi@gmail.com",
-    // Gender: "Male",
-    // DateOfBirth: "14/08/95",
-    // Phone: 52002119,
-    // governorate: "Mednine",
-    // university: "Isimed",
-    // pay : false
-    // }
+  
    
    
   ]

@@ -51,13 +51,13 @@
               <div class="col-6 form-group">
                 <label>password:</label><br />
                 <input formControlName="psw" (change)="checkPasswords()" type="password" name="freelance-quote-phone"
-                  id="freelance-quote-phone" class="form-control required" value="" placeholder="password" />
+                  id="freelance-quote-phone" class="form-control required" value="" placeholder="Password" />
               </div>
 
               <div class="col-6 form-group">
                 <label>Confirm password:</label><br />
                 <input formControlName="cfpsw" (change)="checkPasswords()" type="password" name="freelance-quote-phone"
-                  id="freelance-quote-phone" class="form-control required" value="" placeholder="password" />
+                  id="freelance-quote-phone" class="form-control required" value="" placeholder="Password" />
                 <div style="color:red" *ngIf="checkPasswords()"> check you psw</div>
               </div>
 
@@ -92,7 +92,7 @@
               </div>
               <div class="col-6 form-grou">
                 <label>governorate</label>
-                <select formControlName="governorate" class="form-select required" name="event-registration-passes"
+                <select formControlName="governorate" (change)="onChange($event)" class="form-select required" name="event-registration-passes"
                   id="event-registration-passes">
                   <option value="">-- Select One --</option>
                   <option value="Ariana">Ariana</option>
@@ -130,10 +130,11 @@
                     id="event-registration-last-name" class="form-control required" value=""
                     placeholder="Enter your university" list="ice-cream-flavors" />
                   <datalist id="ice-cream-flavors">
-                    <option value="institut supérieur d'informatique de medenine">
+                    <!-- <option value="institut supérieur d'informatique de medenine">
                     <option value="institut supérieur d'informatique de Mahdia">
-                    <option value="institut supérieur d'informatique de tunis ">
-                    <option value="institut supérieur d'informatique gabes">
+                    <option value="institut supérieur d'informatique de tunis "> -->
+                    
+                      <option *ngFor="let item of arr " [value]="item.fac">
                   </datalist>
                 </div>
               </div>
@@ -211,8 +212,7 @@
         </h2>
 
         <p class="lead mx-auto bottommargin" style="max-width: 800px">
-          Area 01 est un événement organisé par des étudiants qui vise principalement
-          les jeunes afin de les eduquer et les divertir et développer leurs capacités
+          We are a group of seven students who had the idea to organize an event that aims to improve the skills of the participants in the field of IT and create an exchange space between students and companies
         </p>
 
         <!-- <p class="bottommargin" style="font-size: 16px">
@@ -244,10 +244,34 @@
 
       <!-- ======= Schedule Section ======= -->
       <section id="schedule" class="section-with-bg">
+
+        <!-- <div class="flex-w flex-c-m cd100 wsize1 m-lr-auto p-t-116">
+          <div class="flex-col-c-m size2 bor1 m-l-10 m-r-10 m-b-15">
+            <span class="l1-txt3 p-b-9 days"><timer end-time="{{endTime}}">{{days}} </timer></span>
+            <span class="s1-txt2">Days</span>
+          </div>
+  
+          <div class="flex-col-c-m size2 bor1 m-l-10 m-r-10 m-b-15">
+            <span class="l1-txt3 p-b-9 hours"><timer end-time="{{endTime}}">{{hours}} </timer></span>
+            <span class="s1-txt2"> Hours</span>
+          </div>
+  
+          <div class="flex-col-c-m size2 bor1 m-l-10 m-r-10 m-b-15">
+            <span class="l1-txt3 p-b-9 minutes"><timer end-time="{{endTime}}">{{minutes}} </timer></span>
+            <span class="s1-txt2">Minutes</span>
+          </div>
+  
+          <div class="flex-col-c-m size2 bor1 m-l-10 m-r-10 m-b-15">
+            <span class="l1-txt3 p-b-9 seconds"><timer end-time="{{endTime}}">{{seconds}} </timer></span>
+            <span class="s1-txt2">Seconds</span>
+          </div>
+        </div> -->
+
+
         <div class="container" data-aos="fade-up">
           <div class="section-header">
             <h2>Event Schedule</h2>
-            <p>Here is our event schedule</p>
+            <!-- <p>Here is our event schedule</p> -->
           </div>
   
           <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
@@ -262,8 +286,7 @@
             </li>
           </ul>
   
-          <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
-            necessitatibus voluptatem quis labore perspiciatis quia.</h3>
+          <h3 class="sub-heading">Here is our program, stay tuned for more...  s</h3>
   
           <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
   
@@ -271,46 +294,10 @@
             <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
   
               <div class="row schedule-item">
-                <div class="col-md-2"><time>09:30 AM</time></div>
-                <div class="col-md-10">
-                  <h4>Registration</h4>
-                  <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
-                </div>
-              </div>
-  
-              <div class="row schedule-item">
-                <div class="col-md-2"><time>10:00 AM</time></div>
-                <div class="col-md-10">
-                 
-                  <h4>Keynote <span>Brenden Legros</span></h4>
-                  <p>Facere provident incidunt quos voluptas.</p>
-                </div>
-              </div>
-  
-              <div class="row schedule-item">
                 <div class="col-md-2"><time>11:00 AM</time></div>
                 <div class="col-md-10">
-                  
-                  <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                  <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                </div>
-              </div>
-  
-              <div class="row schedule-item">
-                <div class="col-md-2"><time>12:00 AM</time></div>
-                <div class="col-md-10">
-                  
-                  <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                  <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-                </div>
-              </div>
-  
-              <div class="row schedule-item">
-                <div class="col-md-2"><time>02:00 PM</time></div>
-                <div class="col-md-10">
-                  
-                  <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                  <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
+                  <h4>Check in</h4>
+                  <p> A quick check-in process where everyone will be able to make their registration easily. </p>
                 </div>
               </div>
   
@@ -318,18 +305,69 @@
                 <div class="col-md-2"><time>03:00 PM</time></div>
                 <div class="col-md-10">
                  
-                  <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                  <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
+                  <h4>Opening Ceremony </h4>
+                  <p>A special opening ceremony, a great show and a surprise are waiting for you</p>
                 </div>
               </div>
   
               <div class="row schedule-item">
-                <div class="col-md-2"><time>04:00 PM</time></div>
+                <div class="col-md-2"><time>04:30 PM</time></div>
+                <div class="col-md-10">
+                  
+                  <h4>Coffee Break</h4>
+                  <p>a short break to rest and refresh conference </p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>05:30 PM</time></div>
+                <div class="col-md-10">
+                  
+                  <h4>Azure Fundamentals</h4>
+                  <p>Take your Tech skills to the next level with this great starting point to learn about cloud services and solutions in the Azure space. </p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>07:00 PM</time></div>
+                <div class="col-md-10">
+                  
+                  <h4>Dinner</h4>
+                  <!-- <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p> -->
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>09:00 PM</time></div>
                 <div class="col-md-10">
                  
-                  <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                  <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
+                  <h4>Success Story</h4>
+                  <p>Because inspiration is the key to success...Inspirational stories are tales of hope, promise and encouragement. </p>
                 </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>10:00 PM</time></div>
+                <div class="col-md-10">
+                 
+                  <h4>Challenge Announcement</h4>
+                  <p>Get ready to hear about our exciting challenge 
+                  </p>
+                </div>
+              </div>
+
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>10:45 PM</time></div>
+                <div class="col-md-10">
+                 
+                  <h4>Party</h4>
+                  <p>after a huge starting day, we give you a good reason to party and have fun 
+
+                  </p>
+
+                 
+                </div>
+                
               </div>
   
             </div>
@@ -339,56 +377,126 @@
             <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
   
               <div class="row schedule-item">
-                <div class="col-md-2"><time>10:00 AM</time></div>
+                <div class="col-md-2"><time>07:00 AM</time></div>
                 <div class="col-md-10">
                  
-                  <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
-                  <p>Facere provident incidunt quos voluptas.</p>
+                  <h4>Breakfast </h4>
+                  <!-- <p>Facere provident incidunt quos voluptas.</p> -->
                 </div>
               </div>
   
               <div class="row schedule-item">
-                <div class="col-md-2"><time>11:00 AM</time></div>
+                <div class="col-md-2"><time>09:00 AM</time></div>
                 <div class="col-md-10">
                   
-                  <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                  <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
+                  <h4>Power BI Conference</h4>
+                  <p> All Power BI topics are covered in this conference where you can attend and learn from our expert speaker. </p>
+                  <hr style="color :#ed1b76"/>
+                  <h4>Azure DevOps Conference</h4>
+                  <p> A free learning session dedicated to deep technical content for IT Pros and developers who are looking to enhance their knowledge and skills for developing and managing their operations. </p>
+
                 </div>
               </div>
-  
+
               <div class="row schedule-item">
-                <div class="col-md-2"><time>12:00 AM</time></div>
+                <div class="col-md-2"><time>10:30 AM</time></div>
                 <div class="col-md-10">
                   
-                  <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                  <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
+                  <h4>Workshops</h4>
+
+                  <!-- <hr style="color :#ed1b76"/> -->
+                  <p>The objective is to provide training to participants by introducing  a space for discussion and problem solving.
+                  </p>
+                  <!-- <h4>Workshop</h4> -->
+
                 </div>
               </div>
   
               <div class="row schedule-item">
-                <div class="col-md-2"><time>02:00 PM</time></div>
+                <div class="col-md-2"><time>12:30 AM</time></div>
                 <div class="col-md-10">
                   
-                  <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                  <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
+                  <h4>Artificial Intelligence</h4>
+                  <p> a great opportunity that will take you too long to learn about relevant AI advancements 
+                  </p>
+                          <hr style="color :#ed1b76"/>
+                  <h4>Conference Azure Web Apps</h4>
+                  <p>A conference where you will have the chance to learn more from our Azure expert and strengthen your cloud skills.  
+                  </p>
                 </div>
               </div>
   
               <div class="row schedule-item">
-                <div class="col-md-2"><time>03:00 PM</time></div>
+                <div class="col-md-2"><time>04:15 PM</time></div>
                 <div class="col-md-10">
                   
-                  <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                  <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
+                  <h4>Scrum Conference</h4>
+                  <p>an occasion for you to become familiar with the best agile methodology for your specific needs and goals.
+                  </p>
                 </div>
               </div>
   
               <div class="row schedule-item">
-                <div class="col-md-2"><time>04:00 PM</time></div>
+                <div class="col-md-2"><time>05:15 PM</time></div>
+                <div class="col-md-10">
+                  
+                  <h4>Coffee Break</h4>
+                  <p>After a productive day, it's time for a coffee break </p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>06:00 PM</time></div>
                 <div class="col-md-10">
                  
-                  <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                  <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
+                  <h4>Conference AI Services in Azure</h4>
+                  <p>this will bring together the best from Microsoft and the broader cloud computing and AI industry only for you. </p>
+                  <hr style="color :#ed1b76"/>
+
+               
+                  <h4>Big Data Conference</h4>
+                  <p>If you are interested in the use of advanced analytical techniques, this conference is perfect for you.
+                  </p>
+                </div>
+              </div>
+
+        
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>7:30 PM</time></div>
+                <div class="col-md-10">
+                
+                  <h4>Dinner</h4>
+                  <!-- <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p> -->
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>09:00 PM</time></div>
+                <div class="col-md-10">
+                  
+                  <h4>Success Story</h4>
+                  <p>another exciting story to tell by our guests to feed your determination
+                  </p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>09:30 PM</time></div>
+                <div class="col-md-10">
+                 
+                  <h4>Winners Announcement Ceremony</h4>
+                  <p>If you are curious about our awards, be sure to  be a part of the final ceremony and the announcement of the winners.
+                  </p>
+                </div>
+              </div>
+  
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>10:45 PM</time></div>
+                <div class="col-md-10">
+                 
+                  <h4>Party DJ</h4>
+                  <p>the best way to end our successful event is to throw a great DJ party.</p>
                 </div>
               </div>
   
@@ -399,29 +507,49 @@
             <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
   
               <div class="row schedule-item">
-                <div class="col-md-2"><time>10:00 AM</time></div>
+                <div class="col-md-2"><time>07:00 AM</time></div>
                 <div class="col-md-10">
                   
-                  <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                  <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
+                  <h4>Breakfast</h4>
+                  <!-- <p>If you are interested in the use of advanced analytical techniques, this conference is perfect for you. -->
+                  <!-- </p> -->
                 </div>
               </div>
   
+              <div class="row schedule-item">
+                <div class="col-md-2"><time>09:00 AM</time></div>
+                <div class="col-md-10">
+                
+                  <h4>Public Speaking Conference</h4>
+                  <p>Don't miss our precious soft skills, talk with our dear guest Hamza Baloumi to help you nail your next speech or presentation that you give to a group of people.
+                  </p>
+                </div>
+              </div>
               <div class="row schedule-item">
                 <div class="col-md-2"><time>11:00 AM</time></div>
                 <div class="col-md-10">
                 
-                  <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                  <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
+                  <h4>closing Ceremony</h4>
+                 
                 </div>
               </div>
-  
               <div class="row schedule-item">
+                <div class="col-md-2"><time>11:30 AM</time></div>
+                <div class="col-md-10">
+                
+                  <h4>Check out</h4>
+                 
+                </div>
+              </div>
+              
+  
+              <!-- <div class="row schedule-item">
                 <div class="col-md-2"><time>12:00 AM</time></div>
                 <div class="col-md-10">
                   
-                  <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
-                  <p>Facere provident incidunt quos voluptas.</p>
+                  <h4>Success Story</h4>
+                  <p>another exciting story to tell by our guests to feed your determination
+                  </p>
                 </div>
               </div>
   
@@ -429,8 +557,9 @@
                 <div class="col-md-2"><time>02:00 PM</time></div>
                 <div class="col-md-10">
                  
-                  <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                  <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
+                  <h4>Winners Announcement Ceremony</h4>
+                  <p>If you are curious about our awards, be sure to  be a part of the final ceremony and the announcement of the winners.
+                  </p>
                 </div>
               </div>
   
@@ -438,19 +567,12 @@
                 <div class="col-md-2"><time>03:00 PM</time></div>
                 <div class="col-md-10">
                  
-                  <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                  <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
+                  <h4>Party DJ</h4>
+                  <p>the best way to end our successful event is to throw a great DJ party.</p>
                 </div>
-              </div>
+              </div> -->
   
-              <div class="row schedule-item">
-                <div class="col-md-2"><time>04:00 PM</time></div>
-                <div class="col-md-10">
-                 
-                  <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                  <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
-                </div>
-              </div>
+             
   
             </div>
             <!-- End Schdule Day 2 -->
@@ -466,17 +588,80 @@
 
   <div class="container" data-aos="fade-up">
     <div class="section-header">
-      <h2>Sponsors</h2>
+      <h2>Partners</h2>
     </div>
 
     <div class="row no-gutters supporters-wrap clearfix" data-aos="zoom-in" data-aos-delay="100">
 
       <div class="col-lg-3 col-md-4 col-xs-6">
         <div class="supporter-logo">
-          <img src="../../assets/ipsas logo.png" class="img-fluid" alt="">
+          <img src="../../assets/PARTENAIRES/153635411_103161738493164_1129438853119461787_n.jpg" class="img-fluid" alt="">
         </div>
       </div>
 
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/208425665_652952286102887_2814438482647459289_n.png" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/237058128_1476247229409571_7439962963205417448_n.png" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/242490169_417006136586139_1478926622710296670_n.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/243418209_165770839072876_5525899481687861370_n.png" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/247304711_113641734433086_3988640790454059926_n.png" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/249545102_4527108987382548_8659365311823103757_n.png" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/266162352_961422304459907_3646063308902519609_n.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/271274907_884445655575525_6485024181147141599_n.png" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/273604437_130394386148951_672998121383262072_n.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/72608207_2476529982423300_4720436712075952128_n.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/PARTENAIRES/86709750_149046966555438_3981100960138133504_n.png" class="img-fluid" alt="">
+        </div>
+      </div>
 
       <!-- <embed src="../../assets/Squid Game Sound Effect.mp3" loop="false" autostart="true" width="2" height="0"> -->
       
@@ -525,6 +710,31 @@
     </div>
 
   </div>
+
+</section><!-- End Sponsors Section -->
+
+<!-- ======= Supporters Section ======= -->
+<section id="supporters" class="section-with-bg">
+
+  <!-- <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Powerd by</h2>
+    </div>
+
+    <div class="row no-gutters supporters-wrap clearfix" data-aos="zoom-in" data-aos-delay="100">
+
+      <div class="col-lg-3 col-md-4 col-xs-6">
+        <div class="supporter-logo">
+          <img src="../../assets/ipsas logo.png" class="img-fluid" alt="">
+        </div>
+      </div>
+
+
+    
+
+    </div>
+
+  </div> -->
 
 </section><!-- End Sponsors Section -->
 

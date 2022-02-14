@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'news', component: NewsComponent},
   { path: 'home', component: HomeComponent },
-  { path: 'profile',canActivate:[AuthGardService], component: ProfilePartComponent },
+  { path: 'profile', component: ProfilePartComponent },
   
 ];
 
