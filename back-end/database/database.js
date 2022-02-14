@@ -5,7 +5,7 @@ var bcrypt = require('bcryptjs');
 const DATABASE =async () => {
     try {
   await Mongoose.connect(
-    'mongodb://localhost:27017/ISIMED',
+    'mongodb+srv://amine:7Kru2Z2k52CBmpnU@cluster0.ossy9.mongodb.net/The-area?retryWrites=true&w=majority',
     {
         useNewUrlParser : true , 
          useUnifiedTopology : true , 
@@ -27,21 +27,21 @@ const DATABASE =async () => {
                 const salt = await bcrypt.genSalt(10);
                 const hashed = await bcrypt.hash(password, salt);
                 let new_user = new user({
-                FirstName:'admin',
+                  FirstName:'admin',
                   lastname:'admin',
-                    mail:'admin@area.com',
-                    password:hashed,
-                    PhoneNumber:'29787582',
-                    cin:"134256869",
-                   gender:"Male",
-                    role: 'admin',
+                  mail:'admin@area.com',
+                  password:hashed,
+                  PhoneNumber:'29787582',
+                  cin:"134256869",
+                  gender:"Male",
+                  role: 'admin',
                 });
                  await new_user.save();
                  console.log(`Admin account has been added : ${admin.mail}`);
             }else{
                 console.log(` Admin account already exist \n admin email : ${admin.mail}`);
 
-            }
+            } 
             
         }
 

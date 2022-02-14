@@ -602,4 +602,30 @@ exports.register = async (req, res) => {
 
   }
   
+<<<<<<< Updated upstream
 }
+=======
+
+  exports.affiche_ambassadeur_ville = async (req, res) => {
+    console.log("body",req.body.governorate)
+    let users = await user.find({
+      role: "Ambassadeur" ,governorate: req.body.governorate
+    });
+    try {
+      
+      console.log(users)
+  
+      return res.status(200).send(users)
+  
+    } catch (error) {
+      console.log(error)
+      res.status(400).send("error");
+    }
+  
+  }
+  
+  
+  
+  
+  
+>>>>>>> Stashed changes
